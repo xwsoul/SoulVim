@@ -70,7 +70,7 @@ map <F8> <esc>:NERDTreeToggle<CR>
 " 自动打开
 let Tlist_Auto_Open = 1
 " 只显示当前文件的标签列表
-let Tlist_Show_One_File = 1
+" let Tlist_Show_One_File = 1
 " Ctags 命令配置
 let Tlist_Ctags_Cmd = '/usr/bin/ctags'
 " 如果标签列表页是当前窗口的最后一个页面则自动关闭
@@ -96,9 +96,10 @@ let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'"}
 """""""""""""""""
 " onim complete "
 """""""""""""""""
+" omni for Python
+" autocmd FileType python set omnifunc=pythoncomplete#Complete
 " omni for PHP
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-autocmd FileType python set omnifunc=pythoncomplete#Complete
 let php_sql_query=1
 let php_htmlInStrings=1
 
@@ -106,16 +107,6 @@ let php_htmlInStrings=1
 " personal key config "
 """""""""""""""""""""""
 let mapleader = "\\"
-
-"""""""""""""	
-" some abbr "
-"""""""""""""	
-iab iab_ft <c-r>=strftime("%Y-%m-%d %H:%M:%S")<CR>
-iab iab_d <c-r>=strftime("%Y-%m-%d")<CR>
-iab iab_t <c-r>=strftime("%H:%M")<CR>
-iab iab_m xwsoul <xwsoul@gmail.com>
-iab iab_g xwsoul@gmail.com
-iab iab_n 湖爷洞柴废
 
 """"""""""""""""
 " auto command "

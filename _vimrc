@@ -33,7 +33,7 @@ language messages zh_CN.utf-8
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 " 加载自定义的函数
-" source ~/.vim/src/Soul.vim
+" source ~/.vim/soul/Soul.vim
 " 禁用自动备份
 set nobackup
 " source $VIMRUNTIME/mswin.vim

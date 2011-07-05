@@ -3,3 +3,6 @@ sudo apt-get install exuberant-ctags
 
 ;for pyflakes
 sudo easy_install pyflakes
+
+;for pep8checker
+sudo easy_install pep8

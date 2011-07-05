@@ -67,8 +67,7 @@ imap <leader>$$ <C-R>=strftime("%Y-%m-%d")<CR>
 " @ 就是 at
 imap <leader>@ xwsoul@gmail.com
 " .就是当前的
-imap <leader>. <C-R>=expand('%')
-imap <leader>.. <C-R>=expand('%')
+imap <leader>. <C-R>=expand('%')<CR>
 
 
 """""""""""""""""""""

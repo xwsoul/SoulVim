@@ -1,6 +1,7 @@
 """"""""""""""""""""
 " common configure "
 """"""""""""""""""""
+
 " 显示行号
 set nu
 " 高亮代码
@@ -22,27 +23,42 @@ set wrap
 set nocp
 " 自动加载外部改动
 " set autoread
-
 " 配色方案
 color macvim
 " 文件编码
 set encoding=utf-8
 set fileencodings=utf-8,chinese
+language messages zh_CN.utf-8
+" 加载其他文件
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
-language messages zh_CN.utf-8
-source $VIMRUNTIME/vimrc_example.vim
-
+" 加载自定义的函数
+" source ~/.vim/src/Soul.vim
 " 禁用自动备份
 set nobackup
 " source $VIMRUNTIME/mswin.vim
 " behave mswin
+
+
+""""""""""""""
+" leader key "
+""""""""""""""
+let mapleader = ","
+nmap <leader>s :w<cr>
+" 添加 # 注释
+imap <leader># <esc>0i#
+nmap <leader># 0i#
+" 添加 // 注释
+imap <leader>/ <esc>0i//
+nmap <leader>/ 0i//
+
 
 """""""""""""""""""""
 " Hotkeys for table "
 """""""""""""""""""""
 " 打开新标签页
 map <F3> <esc>:tabnew 
+nmap <leader>t :tabnew<cr>
 " 关闭当前标签页
 map <F4> <esc>:tabclose<CR>
 " 标签页左移
@@ -57,16 +73,18 @@ map <A-Right> <esc>:tabnext<CR>
 " NERDTree 界面宽度
 let NERDTreeWinSize = 27
 " 打开 NERDTree
-map <F7> <esc>:NERDTreeFromBookmark 
-map <C-F7> <esc>:Bookmark 
-map <F8> <esc>:NERDTreeToggle<CR>
+map <A-F10> <esc>:NERDTreeFromBookmark 
+nmap <leader>fb :NERDTreeFromBookmark 
+map <C-F10> <esc>:Bookmark 
+nmap <leader>b :Bookmark 
+map <F10> <esc>:NERDTreeToggle<CR>
 
 
 """""""""""""""""""""
 " Taglist configure "
 """""""""""""""""""""
-" 不知道可以搞啥
-" set tags=~/.vim/data/tags/yii
+" 载入标签
+" set tags=~/.vim/data/tags/
 " 自动打开
 let Tlist_Auto_Open = 1
 " 只显示当前文件的标签列表
@@ -78,7 +96,7 @@ let Tlist_Exit_OnlyWindow = 1
 " 在右边窗口显示标签列表
 let Tlist_Use_Right_Window = 1
 " set hot key for Taglist's open and close
-map <F6> <esc>:TlistToggle<CR>
+map <F9> <esc>:TlistToggle<CR>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -87,11 +105,13 @@ map <F6> <esc>:TlistToggle<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'"}
 
+
 """""""""""
 " matchit "
 """"""""'""
 " 关闭自动加载插件
 "let loaded_matchit = 1
+
 
 """""""""""""""""
 " onim complete "
@@ -103,10 +123,6 @@ autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 let php_sql_query=1
 let php_htmlInStrings=1
 
-"""""""""""""""""""""""
-" personal key config "
-"""""""""""""""""""""""
-let mapleader = "\\"
 
 """"""""""""""""
 " auto command "

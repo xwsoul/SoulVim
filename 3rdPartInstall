@@ -1,0 +1,5 @@
+;for Tlist
+sudo apt-get install exuberant-ctags
+
+;for pyflakes
+sudo easy_install pyflakes

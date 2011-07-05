@@ -1,7 +1,6 @@
 """"""""""""""""""""
 " common configure "
 """"""""""""""""""""
-
 " 显示行号
 set nu
 " 高亮代码
@@ -17,6 +16,8 @@ set ts=4
 " 智能空格
 set smarttab
 set ai
+" 将Python的tab转换为空格 
+au filetype python set expandtab
 " 换行
 set wrap
 " 关闭兼容模式
@@ -83,7 +84,7 @@ map <F10> <esc>:NERDTreeToggle<CR>
 """""""""""""""""""""
 " Taglist configure "
 """""""""""""""""""""
-" 载入标签
+" 载入标签文件
 " set tags=~/.vim/data/tags/
 " 自动打开
 let Tlist_Auto_Open = 1

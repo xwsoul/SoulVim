@@ -3,7 +3,7 @@
 " E-mail   : xwsoul@gmail.com
 " Blog     : http://xwsoul.com
 " Created  : 2011-07-04
-" Modified : 2011-07-05 16:25
+" Modified : 2001-07-05
 """"""""""""""""""""""""""""""""""""""
 
 
@@ -61,15 +61,12 @@ nmap <leader># 0i#
 " 添加 // 注释
 imap <leader>/ <esc>0i//
 nmap <leader>/ 0i//
-" 时间就是金钱我的朋友
-imap <leader>$ <C-R>=strftime("%Y-%m-%d %H:%M")<CR>
-imap <leader>$$ <C-R>=strftime("%Y-%m-%d")<CR>
-" @ 就是 at
-imap <leader>@ xwsoul@gmail.com
-" .就是当前的
-imap <leader>. <C-R>=expand('%')
-imap <leader>.. <C-R>=expand('%')
 
+"""""""""
+" abbrs "
+"""""""""
+" 时间就是金钱我的朋友
+iab $ <esc><C-R>=strftime("%y%m%d %T")<CR>
 
 """""""""""""""""""""
 " Hotkeys for table "

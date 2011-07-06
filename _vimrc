@@ -3,7 +3,7 @@
 " E-mail   : xwsoul@gmail.com
 " Blog     : http://xwsoul.com
 " Created  : 2011-07-04
-" Modified : 2011-07-05 16:25
+" Modified : 2011-07-06 13:25
 """"""""""""""""""""""""""""""""""""""
 
 
@@ -44,11 +44,13 @@ source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 " 加载自定义的函数
 " source ~/.vim/soul/Soul.vim
-" 禁用自动备份
-set nobackup
 " source $VIMRUNTIME/mswin.vim
 " behave mswin
-
+" 禁用自动备份
+set nobackup
+" 禁用swp文件
+set nowb
+set noswapfile
 
 """"""""""""""
 " leader key "

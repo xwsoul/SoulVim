@@ -141,13 +141,40 @@ let php_sql_query=1
 let php_htmlInStrings=1
 
 
+"""""""""""""""
+" XMMS Player "
+"""""""""""""""
+if has('python') 
+	py import os, sys 
+	py sys.path.append(os.path.expanduser("~/.vim/vimmp"))
+	pyf ~/.vim/vimmp/main.py
+endif
+" 播放服务 xmms2 or mdp
+let g:vimmp_server_type="xmms2"
+" 播放标签编码
+" let g:xmms_id3_encoding="gbk" 
+" 表放列表格式
+let g:xmms_playlist_format="%title - %artist"
+" 播放菜单绑定
+" 打开播放菜单
+nmap <silent> <leader>xo :py vimmp_toggle()<cr>
+" 停止播放
+nmap <silent> <leader>xs :py g_vimmp.stop_play()<cr>
+" 餐厅播放
+nmap <silent> <leader>xp :py g_vimmp.pause_play()<cr>
+" 单曲循环模式
+nmap <silent> <leader>xr :py g_vimmp.set_repeat_mode()<cr>
+" 退出自动停止播放
+au VimLeavePre * :py g_vimmp.stop_play()
+
+
 """"""""""""""""
 " auto command "
 """"""""""""""""
 " 自动打开 NERDTree
-autocmd VimEnter * NERDTree
+au VimEnter * NERDTree
 " 为每个buffer共享NERDTree镜像
-autocmd BufEnter * NERDTreeMirror
+au BufEnter * NERDTreeMirror
 
 
 "初始窗口的位置

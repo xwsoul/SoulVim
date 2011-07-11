@@ -8,5 +8,5 @@ sudo easy_install pyflakes
 sudo easy_install pep8
 
 ;for vimmp
-sudo apt-get install mms2
+sudo apt-get install xmms2
 sudo apt-get install python-xmmsclient

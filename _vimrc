@@ -58,10 +58,10 @@ set noswapfile
 let mapleader = ","
 nmap <leader>s :w<cr>
 " 添加 # 注释
-imap <leader># <esc>0i#
+imap <leader># <ESC>0i#
 nmap <leader># 0i#
 " 添加 // 注释
-imap <leader>/ <esc>0i//
+imap <leader>/ <ESC>0i//
 nmap <leader>/ 0i//
 " 时间就是金钱我的朋友
 imap <leader>$ <C-R>=strftime("%Y-%m-%d %H:%M")<CR>

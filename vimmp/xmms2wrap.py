@@ -102,7 +102,7 @@ class Controller(object):
         self.x.playlist_create(name).wait()
         r = self.x.playlist_list_entries()
         r.wait()
-        for i, id in enumerate(r.get_list()):
+        for i, id in enumerate(r.value()):
             self.x.playlist_insert_id(i, id, name).wait()
 
     def load_playlist(self, name):
@@ -111,7 +111,7 @@ class Controller(object):
     def get_playlists(self):
         r = self.x.playlist_list()
         r.wait()
-        return [x.encode(self.system_encoding) for x in r.get_list()]
+        return [x.encode(self.system_encoding) for x in r.value()]
 
     def get_current_playlist(self):
         r = self.x.playlist_current_active()

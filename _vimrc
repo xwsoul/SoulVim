@@ -139,6 +139,7 @@ let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'"}
 " autocmd FileType python set omnifunc=pythoncomplete#Complete
 " omni for PHP
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType python set omnifunc=pythoncomplete#Complete
 let php_sql_query=1
 let php_htmlInStrings=1
 

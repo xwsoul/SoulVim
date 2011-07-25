@@ -3,7 +3,7 @@
 " E-mail   : xwsoul@gmail.com
 " Blog     : http://xwsoul.com
 " Created  : 2011-07-04
-" Modified : 2011-07-06 13:25
+" Modified : 2011-07-25 19:45
 """"""""""""""""""""""""""""""""""""""
 
 
@@ -34,7 +34,7 @@ set nocp
 " 自动加载外部改动
 " set autoread
 " 配色方案
-color solarized
+color ir_black
 " 文件编码
 set encoding=utf-8
 set fileencodings=utf-8,chinese
@@ -109,7 +109,7 @@ let Tlist_Auto_Open = 1
 " 只显示当前文件的标签列表
 " let Tlist_Show_One_File = 1
 " Ctags 命令配置
-let Tlist_Ctags_Cmd = '/usr/bin/ctags'
+let Tlist_Ctags_Cmd = 'ctags'
 " 如果标签列表页是当前窗口的最后一个页面则自动关闭
 let Tlist_Exit_OnlyWindow = 1
 " 在右边窗口显示标签列表
@@ -122,7 +122,7 @@ map <F9> <esc>:TlistToggle<CR>
 " auto close                                           "
 " http://www.vim.org/scripts/script.php?script_id=2009 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'"}
+let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'", "`": "`"}
 
 
 """""""""""
@@ -142,33 +142,6 @@ autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 let php_sql_query=1
 let php_htmlInStrings=1
-
-
-"""""""""""""""
-" XMMS Player "
-"""""""""""""""
-if has('python') 
-	py import os, sys 
-	py sys.path.append(os.path.expanduser("~/.vim/vimmp"))
-	pyf ~/.vim/vimmp/main.py
-endif
-" 播放服务 xmms2 or mdp
-let g:vimmp_server_type="xmms2"
-" 播放标签编码
-" let g:xmms_id3_encoding="gbk" 
-" 表放列表格式
-let g:xmms_playlist_format="%title - %artist"
-" 播放菜单绑定
-" 打开播放菜单
-nmap <silent> <leader>xo :py vimmp_toggle()<cr>
-" 停止播放
-nmap <silent> <leader>xs :py g_vimmp.stop_play()<cr>
-" 餐厅播放
-nmap <silent> <leader>xp :py g_vimmp.pause_play()<cr>
-" 单曲循环模式
-nmap <silent> <leader>xr :py g_vimmp.set_repeat_mode()<cr>
-" 退出自动停止播放
-au VimLeavePre * :py g_vimmp.stop_play()
 
 
 """"""""""""""""

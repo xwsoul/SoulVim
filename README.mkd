@@ -1,0 +1,74 @@
+SoulVim
+==============
+
+**author**: xwsoul
+
+**email** : xwsoul@gmail.com
+
+---
+
+####plugins:
+
+* NerdTree
+* TagList
+* SnipMate
+* MatchIt
+* phplint (php syntax check)
+* pep8checker
+* Python Pyflakes (Some problem now)
+* zencoding
+* autoclose
+
+
+####syntax:
+
+* markdown
+
+
+#### Omni Complete:
+
+* Python
+* PHP
+
+
+####Something special in SoulVim:
+	
+* phplint (based on pep8checker)
+
+	![Snapshot for phplint][phplint]
+
+* vim rc file link shell
+* Third part tools install list
+
+
+####hotkeys:
+
+* leader--------,
+
+	1. ,s => :w (save)
+	2. ,# => # style comment
+	3. ,/ => / style comment
+	4. ,$ => long formated time (time is money my friend :D)
+	5. ,$$ => short formated time
+	6. ,@ => My Email address
+	7. ,. => current filename
+
+* F3------------new tab
+* F4------------close current tab
+* Alt+Left------move to left table
+* Alt+Right-----move to right table
+* F9------------Toggle a taglist window
+* F10-----------Toggle a NerdTree window
+* Alt+F10-------Open NerdTree from bookmark
+* Ctrl+F10------Make a bookmark
+
+
+###colorscheme:
+
+* eclipse
+* ir_black
+* macvim
+* solarized
+
+
+[phplint]: http://farm7.static.flickr.com/6008/5979704329_a1899d79e1.jpg "PHPLint Snapshot"

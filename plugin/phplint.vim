@@ -19,7 +19,7 @@ autocmd BufWinLeave * call s:MaybeClearCursorLineColor()
 function PHPLint() 
   " run javascript lint on the current file
   let current_file = shellescape(expand('%:p'))
-  let cmd_output = system(g:phplint_command . ' ' . current_file . ' 2> /dev/null')
+  let cmd_output = system(g:phplint_command . ' ' . current_file)
 
   if stridx(cmd_output, 'No syntax errors detected') != 0
 

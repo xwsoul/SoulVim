@@ -155,5 +155,7 @@ au BufEnter * NERDTreeMirror
 
 "初始窗口的位置
 if has("gui_running")
+	" 关闭工具栏
+	set guioptions-=T
 	winpos 0 0
 endif

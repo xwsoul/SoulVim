@@ -5,19 +5,18 @@ SoulVim
 
 **email** : xwsoul@gmail.com
 
----
 
 ####plugins:
 
-* NerdTree
-* TagList
-* SnipMate
-* MatchIt
-* phplint (php syntax check)
-* pep8checker
-* Python Pyflakes (Some problem now)
-* zencoding
-* autoclose
+* [NerdTree](http://www.vim.org/scripts/script.php?script_id=1658)
+* [TagList](http://www.vim.org/scripts/script.php?script_id=273)
+* [SnipMate](http://www.vim.org/scripts/script.php?script_id=2540)
+* [Match It](http://www.vim.org/scripts/script.php?script_id=39)
+* [phplint](https://github.com/xwsoul/SoulVim/blob/master/plugin/phplint.vim) (php syntax check, Most code copied from pep8checker)
+* [pep8checker](https://github.com/xwsoul/SoulVim/blob/master/plugin/pep8checker.vim) (Sorry , I Can find this plug's origin url)
+* [Python Pyflakes]() (Some problem now)
+* [Zencoding](http://www.vim.org/scripts/script.php?script_id=2981)
+* [Auto Close](http://www.vim.org/scripts/script.php?script_id=2009)
 
 
 ####syntax:

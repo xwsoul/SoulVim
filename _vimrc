@@ -105,7 +105,7 @@ map <F10> <esc>:NERDTreeToggle<CR>
 """"""""""""""""""""""
 " SnipMate configure "
 """"""""""""""""""""""
-let g:snips_author = xwsoul
+let g:snips_author ="xwsoul"
 
 
 """""""""""""""""""""

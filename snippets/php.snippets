@@ -22,27 +22,29 @@ snippet req
 	require '${1:file}';${2}
 snippet req1
 	require_once '${1:file}';${2}
+
 # $GLOBALS['...']
-snippet $_ GET['...']
+snippet $g
 	$_GET['${1:variable}']${2}
-snippet $_ POST['...']
-	$_POST['${1:variable}']${2}
-snippet $_ GETI['...']
+snippet $gi
 	(int)$_GET['${1:id}']${2}
-snippet $_ SESSION['...']
-	$_SESSION['${1:variable}']${2}
-snippet $_ SERVER['...']
-	$_SERVER['${1:variable}']${2}
-snippet $_ COOKIE['...']
-	$_COOKIE['${1:variable}']${2}
-snippet $_ FILES['...']
+snippet $p
+	$_POST['${1:variable}']${2}
+snippet $f
 	$_FILES['${1:variable}']${2}
-snippet globals
-	$GLOBALS['${1:variable}']${2: = }${3:something}${4:;}${5}
-snippet $_ ENV['...']
-	$_ENV['${1:variable}']${2}
-snippet $_ REQUEST['...']
+snippet $c
+	$_COOKIE['${1:variable}']${2}
+snippet $r
 	$_REQUEST['${1:variable}']${2}
+snippet $s
+	$_SESSION['${1:variable}']${2}
+snippet $se
+	$_SERVER['${1:variable}']${2}
+snippet $gl
+	$GLOBALS['${1:variable}']${2: = }${3:something}${4:;}${5}
+snippet $e
+	$_ENV['${1:variable}']${2}
+
 # Start Docblock
 snippet /*
 	/**
@@ -233,7 +235,9 @@ snippet arr
 snippet =>
 	'${1}' => ${2}
 snippet var
-	var_dump($${1:variable}${2:, var}${3});
+	var_dump($${1:variable}${2:, $}${3});
+snippet vare
+	var_dump($${1:variable}${2:, $}${3});exit;
 
 # public element
 snippet pub

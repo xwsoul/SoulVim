@@ -92,8 +92,8 @@ snippet doc_d
 snippet doc_fp
 	/**
 	 * ${1:undocumented function}
-	 * @return ${2:void}
-	 */${4}
+	 * @return @${2}
+	 */
 # Function signature
 snippet doc_s
 	/**
@@ -105,10 +105,10 @@ snippet doc_s
 snippet doc_f
 	/**
 	 * ${4:undocumented function}
-	 * @return ${5:void}
+	 * @return @${5}
 	 */
-	${1}function ${2}(${3})
-	{${7}
+	${1}function ${2}(${3}) {
+		${7}
 	}
 # Header
 snippet doc_h
@@ -116,7 +116,8 @@ snippet doc_h
 	 * ${1}
 	 * @author ${2:`g:snips_author`}
 	 * @version ${3:$Id$}
-	 * @copyright ${4:$2}, `strftime('%d %B, %Y')`
+	 * @copyright ${4:$2}
+	 * @created `strftime('%d %B, %Y')`
 	 */
 	
 	/**
@@ -128,29 +129,35 @@ snippet doc_i
 	 * ${2:undocumented class}
 	 * @author ${4:`g:snips_author`}
 	 */
-	interface ${1:}
-	{${5}
-	} // END interface $1
+	interface ${1:} {
+		${5}
+	}
 # class ...
 snippet class
 	/**
-	 * ${1}
-	 * ${2:some describe}
+	 * ${2}
+	 * ${3:some describe}
 	 */
 	class ${1:ClassName} {
-		${3:// comment...}
-		public function ${4:__construct}(${5:argument}) {
-			${6:// code...}
-		}
-
-		${7://comment...}
-		public function ${8:__destruct}() {
-			${9:// code...}
-		}
+	}
+snippet __co
+	/**
+	 * construct function
+	 */
+	public function __construct() {
+	}
+snippet __de
+	/**
+	 * destruct function
+	 */
+	public function __destruct() {
 	}
 # like this.
 snippet .
 	$this->${1}
+# 
+snippet $.
+	$${1:initor}->${2}
 # define(...)
 snippet def
 	define('${1}'${2});${3}
@@ -181,15 +188,15 @@ snippet else
 	else {
 		${1:// code...}
 	}
-snippet elseif
+snippet elif
 	elseif (${1:/* condition */}) {
 		${2:// code...}
 	}
 # Tertiary conditional
-snippet t
+snippet ?
 	(${1:condition}) ? ${2:a} : ${3:b};${4}
 # Tertiary conditional and return Value
-snippet tv
+snippet ?=
 	$${1:retVal} = (${2:condition}) ? ${3:a} : ${4:b};${5}
 snippet switch
 	switch ($${1:variable}) {
@@ -221,76 +228,100 @@ snippet fun
 		// code...
 	}
 # $... = array (...)
-snippet array
-	$${1:arrayName} = array('${2}' => ${3});${4}
-snippet var_dump
-	var_dump($${1:variable}${2:, var}${3});
+snippet arr
+	$${1:arrayName} = array(${2:=>}${3});
+snippet =>
+	'${1}' => ${2}
 snippet var
-	${1:$variable}${2:, var}${3}
-snippet pub variable
-	/**
-	 * ${2:describe here}
-	 * @var ${3:proType}${4}
-	 */
-	public $${1:variable};
-snippet pub function
+	var_dump($${1:variable}${2:, var}${3});
+
+# public element
+snippet pub
 	/**
 	 * ${1:describe here}
-	 * @return ${2:proType}${3}
+	 * @return @${2}
 	 */
 	public fun
-snippet pub static function
+snippet pubs
 	/**
 	 * ${1:describe here}
-	 * @return ${2:proType}${3}
+	 * @return @${2}
 	 */
 	public static fun
-
-snippet pro variable
+snippet pubv
 	/**
 	 * ${2:describe here}
-	 * @var ${3:proType}${4}
+	 * @var @${3}
 	 */
-	protected $${1:variable};
-snippet pro function
+	public $${1:variable};
+snippet pubsv 
 	/**
 	 * ${1:describe here}
-	 * @return ${2:proType}${3}
+	 * @var @${2}
+	 */
+	public static $${1:variable}
+
+# protected element
+snippet pro
+	/**
+	 * ${1:describe here}
+	 * @return @${2}
 	 */
 	protected fun
-snippet pro static function
+snippet pros
 	/**
 	 * ${1:describe here}
-	 * @return ${2:proType}${3}
+	 * @return @${2}
 	 */
 	protected static fun
-
-snippet pri variable
+snippet prov
 	/**
 	 * ${2:describe here}
-	 * @var ${3:proType}${4}
+	 * @var @${3}
 	 */
-	private $${1:variable};
-snippet pri function
+	protected $${1:variable};
+snippet prosv 
 	/**
 	 * ${1:describe here}
-	 * @return ${2:proType}${3}
+	 * @var @${2}
+	 */
+	protected static $${1:variable}
+
+# private element
+snippet pri
+	/**
+	 * ${1:describe here}
+	 * @return @${2}
 	 */
 	private fun
-snippet pri static function
+snippet pris
 	/**
 	 * ${1:describe here}
-	 * @return ${2:proType}${3}
+	 * @return @${2}
 	 */
 	private static fun
+snippet priv
+	/**
+	 * ${2:describe here}
+	 * @var @${3}
+	 */
+	private $${1:variable};
+snippet prisv 
+	/**
+	 * ${1:describe here}
+	 * @var @${2}
+	 */
+	private static $${1:variable}
 
-snippet proType int
+snippet @i
 	int
-snippet proType str
+snippet @s
 	string
-snippet proType arr
+snippet @a
 	array
-snippet proType bool
+snippet @b
 	bool
-snippet proType void
+snippet @v
 	void
+snippet @n
+	null

@@ -45,8 +45,9 @@ SoulVim
 * leader--------,
 
 	1. ,s => :w (save)
-	2. ,# => # style comment
-	3. ,/ => / style comment
+	2. ,# => *#* style comment
+	3. ,/ => */* style comment
+	8. ,; => end a statment with *;*
 	4. ,$ => long formated time (time is money my friend :D)
 	5. ,$$ => short formated time
 	6. ,@ => My Email address

@@ -63,6 +63,9 @@ nmap <leader># 0i#
 " 添加 // 注释
 imap <leader>/ <ESC>0i//
 nmap <leader>/ 0i//
+" 结束语句
+imap <leader>; <ESC>$i;
+nmap <leader>; $i;
 " 时间就是金钱我的朋友
 imap <leader>$ <C-R>=strftime("%Y-%m-%d %H:%M")<CR>
 imap <leader>$$ <C-R>=strftime("%Y-%m-%d")<CR>

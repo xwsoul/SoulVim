@@ -1,0 +1,58 @@
+snippet if
+	if ${1:cond} then
+		${2:--body}
+	end
+snippet else
+	else
+		${1:==body}
+snippet ifel
+	if ${1:cond} then
+		${2:--body}
+	else
+		${3:==body}
+	end
+snippet ifei
+	if ${1:cond} then
+		${2:--body}
+	else if ${3:cond} then
+		${3:--body}
+	else
+		${4:==body}
+	end
+
+snippet for
+	for ${1:0}, ${2:T&S} do
+		${3:--body}
+	end
+snippet foin
+	for ${1:k,v} in pairs(${2:dict}) do
+		${2:--body}
+	end
+snippet while
+	while ${1:cond} do
+		${2:--body}
+	end
+snippet repeat
+	repeat
+		${1:--body}
+	until ${2:cond}
+
+snippet fun
+	function ${1:funcname}
+		${2:--body}
+	end
+snippet l
+	local ${1:var}
+
+snippet --
+	--[[
+	${1:some comments}
+	]]
+
+snippet pri
+	print(${1:value})
+snippet =r
+	${1:val} = os.read("${2}")
+snippet e
+	os.exit(${1})${2}
+

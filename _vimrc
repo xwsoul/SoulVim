@@ -56,19 +56,28 @@ set noswapfile
 " leader key "
 """"""""""""""
 let mapleader = ","
-nmap <leader>s :w<cr>
-" 添加 # 注释
+" save file
+imap <leader>w <ESC>:w<CR>a
+nmap <leader>w :w<CR>
+" quit
+imap <leader>q <ESC>:q<CR>
+nmap <leader>q :q<CR>
+" # style comment
 imap <leader># <ESC>0i#
 nmap <leader># 0i#
-" 添加 // 注释
+" // style comment
 imap <leader>/ <ESC>0i//
 nmap <leader>/ 0i//
 " 结束语句
 imap <leader>; <ESC>$a;
 nmap <leader>; $a;
-" 时间就是金钱我的朋友
-imap <leader>$ <C-R>=strftime("%Y-%m-%d %H:%M")<CR>
-imap <leader>$$ <C-R>=strftime("%Y-%m-%d")<CR>
+" 结束语句
+imap <leader>$ <ESC>$a
+nmap <leader>$ $a
+" full time
+imap <leader>t <C-R>=strftime("%Y-%m-%d %H:%M")<CR>
+" date
+imap <leader>d <C-R>=strftime("%Y-%m-%d")<CR>
 " @ 就是 at
 imap <leader>@ xwsoul@gmail.com
 " .就是当前的

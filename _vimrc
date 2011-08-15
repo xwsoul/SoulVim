@@ -51,6 +51,10 @@ set nobackup
 " 禁用swp文件
 set nowb
 set noswapfile
+" spell check
+"set spell
+" show invisible chars
+"set list
 
 """"""""""""""
 " leader key "
@@ -63,17 +67,19 @@ nmap <leader>w :w<CR>
 imap <leader>q <ESC>:q<CR>
 nmap <leader>q :q<CR>
 " # style comment
-imap <leader># <ESC>0i#
-nmap <leader># 0i#
+imap <leader># <ESC>I#
+nmap <leader># I#
 " // style comment
-imap <leader>/ <ESC>0i//
-nmap <leader>/ 0i//
-" 结束语句
-imap <leader>; <ESC>$a;
-nmap <leader>; $a;
-" 结束语句
-imap <leader>$ <ESC>$a
-nmap <leader>$ $a
+imap <leader>/ <ESC>I//
+nmap <leader>/ I//
+" -- style comment
+imap <leader>- <ESC>I--
+nmap <leader>- I--
+" append ; to the end of line
+imap <leader>; <ESC>A;
+nmap <leader>; A;
+" append at end of line
+imap <leader>a <ESC>A
 " full time
 imap <leader>t <C-R>=strftime("%Y-%m-%d %H:%M")<CR>
 " date
@@ -85,7 +91,7 @@ imap <leader>. <C-R>=expand('%')<CR>
 
 
 """""""""""""""""""""
-" Hotkeys for table "
+" Hot keys for table "
 """""""""""""""""""""
 " 打开新标签页
 map <F3> <esc>:tabnew 

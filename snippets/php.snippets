@@ -9,12 +9,16 @@ snippet phpl
 snippet phpe
 	<?php ec${1}?>
 snippet ec
-	echo "${1:string}";${2}
+	echo ${1:string}
+snippet ec""
+	echo "${1:string}"
+snippet ec"
+	echo "${1:string}"
 snippet ec$
-	echo ${1:$var};${3}
+	echo ${1:$var}
 # echo function result
 snippet ecf
-	echo ${1:func}(${2});${3}
+	echo ${1:func}(${2})
 snippet inc
 	include '${1:file}';${2}
 snippet inc1
@@ -238,7 +242,7 @@ snippet fun
 	}
 snippet arr
 	array(
-		${2:key}=>${3:val},
+		${1:key}=>${2:val},
 	);
 snippet =arr
 	$${1:arrayName} = array(
@@ -345,6 +349,8 @@ snippet @n
 
 #system function snippet
 snippet _am
-	array_merge($${1:arr1}, $${2:arr2}${3:, $arr3});
+	array_merge(${1:arr1}, ${2:arr2}${3:, $arr3});
+snippet _as
+	array_search(${1:find}, ${2:array, trueType})
 snippet _ake
 	array_key_exists('${1:key}', $${2:array});

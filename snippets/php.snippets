@@ -4,16 +4,21 @@ snippet php
 	<?php
 	${1}
 	?>
-snippet <?=
-	<?php echo ${1:variable};?>
 snippet phpl
 	<?php ${1}?>
 snippet phpe
 	<?php ec${1}?>
 snippet ec
-	echo "${1:string}"${2};
+	echo ${1:string}
+snippet ec""
+	echo "${1:string}"
+snippet ec"
+	echo "${1:string}"
 snippet ec$
-	echo ${1:$string}${2:, $}${3};
+	echo ${1:$var}
+# echo function result
+snippet ecf
+	echo ${1:func}(${2})
 snippet inc
 	include '${1:file}';${2}
 snippet inc1
@@ -159,7 +164,7 @@ snippet .
 	$this->${1}
 # 
 snippet $.
-	$${1:initor}->${2}
+	$${1:model}->${2}
 # define(...)
 snippet def
 	define('${1}'${2});${3}
@@ -198,7 +203,7 @@ snippet elif
 snippet ?
 	(${1:condition}) ? ${2:a} : ${3:b};${4}
 # Tertiary conditional and return Value
-snippet ?=
+snippet =?
 	$${1:retVal} = (${2:condition}) ? ${3:a} : ${4:b};${5}
 snippet switch
 	switch ($${1:variable}) {
@@ -225,19 +230,30 @@ snippet foreach
 	foreach ($${1:variable} as $${2:key}) {
 		${3:// code...}
 	}
-snippet fun
-	function ${1:FunctionName}(${2:$}) {
-		// code...
+snippet try
+	try{
+		${1://code...}
+	} catch(${2:Exception} $${3:e}) {
+		//echo $$3->getMessage();
 	}
-# $... = array (...)
+snippet fun
+	function ${1:name}(${2:$}) {
+		${3:// code...}
+	}
 snippet arr
-	$${1:arrayName} = array(${2:=>}${3});
+	array(
+		${1:key}=>${2:val},
+	);
+snippet =arr
+	$${1:arrayName} = array(
+		${2:key}=>${3:val},
+	);
 snippet =>
-	'${1}' => ${2}
+	'${1:key}' => ${2:val}
 snippet var
-	var_dump($${1:variable}${2:, $}${3});
+	var_dump($${1:variable});${2}
 snippet vare
-	var_dump($${1:variable}${2:, $}${3});exit;
+	var_dump($${1:variable}};exit;${2}
 
 # public element
 snippet pub
@@ -317,6 +333,7 @@ snippet prisv
 	 */
 	private static $${1:variable}
 
+# comment type
 snippet @i
 	int
 snippet @s
@@ -329,3 +346,11 @@ snippet @v
 	void
 snippet @n
 	null
+
+#system function snippet
+snippet _am
+	array_merge(${1:arr1}, ${2:arr2}${3:, $arr3});
+snippet _as
+	array_search(${1:find}, ${2:array, trueType})
+snippet _ake
+	array_key_exists('${1:key}', $${2:array});

@@ -51,24 +51,39 @@ set nobackup
 " 禁用swp文件
 set nowb
 set noswapfile
+" spell check
+"set spell
+" show invisible chars
+"set list
 
 """"""""""""""
 " leader key "
 """"""""""""""
 let mapleader = ","
-nmap <leader>s :w<cr>
-" 添加 # 注释
-imap <leader># <ESC>0i#
-nmap <leader># 0i#
-" 添加 // 注释
-imap <leader>/ <ESC>0i//
-nmap <leader>/ 0i//
-" 结束语句
-imap <leader>; <ESC>$a;
-nmap <leader>; $a;
-" 时间就是金钱我的朋友
-imap <leader>$ <C-R>=strftime("%Y-%m-%d %H:%M")<CR>
-imap <leader>$$ <C-R>=strftime("%Y-%m-%d")<CR>
+" save file
+imap <leader>w <ESC>:w<CR>a
+nmap <leader>w :w<CR>
+" quit
+imap <leader>q <ESC>:q<CR>
+nmap <leader>q :q<CR>
+" # style comment
+imap <leader># <ESC>I#
+nmap <leader># I#
+" // style comment
+imap <leader>/ <ESC>I//
+nmap <leader>/ I//
+" -- style comment
+imap <leader>- <ESC>I--
+nmap <leader>- I--
+" append ; to the end of line
+imap <leader>; <ESC>A;
+nmap <leader>; A;
+" append at end of line
+imap <leader>a <ESC>A
+" full time
+imap <leader>t <C-R>=strftime("%Y-%m-%d %H:%M")<CR>
+" date
+imap <leader>d <C-R>=strftime("%Y-%m-%d")<CR>
 " @ 就是 at
 imap <leader>@ xwsoul@gmail.com
 " .就是当前的
@@ -76,7 +91,7 @@ imap <leader>. <C-R>=expand('%')<CR>
 
 
 """""""""""""""""""""
-" Hotkeys for table "
+" Hot keys for table "
 """""""""""""""""""""
 " 打开新标签页
 map <F3> <esc>:tabnew 

@@ -44,12 +44,15 @@ SoulVim
 
 * leader--------,
 
-	1. ,s => :w (save)
+	1. ,w => :w (write to file)
+	1. ,q => :q (quit)
 	2. ,# => *#* style comment
 	3. ,/ => */* style comment
-	8. ,; => end a statment with *;*
-	4. ,$ => long formated time (time is money my friend :D)
-	5. ,$$ => short formated time
+	3. ,- => *-* style comment
+	8. ,; => append *;* to end of line
+	8. ,a => append at end of line
+	4. ,t => long formated time (Y-m-d H:M)
+	5. ,d => date(Y-m-d)
 	6. ,@ => My Email address
 	7. ,. => current filename
 

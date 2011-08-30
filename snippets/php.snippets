@@ -162,6 +162,8 @@ snippet __de
 # like this.
 snippet .
 	$this->${1}
+snippet ::
+	self::${1}
 # 
 snippet $.
 	$${1:model}->${2}
@@ -251,9 +253,9 @@ snippet =arr
 snippet =>
 	'${1:key}' => ${2:val}
 snippet var
-	var_dump($${1:variable});${2}
+	var_dump(${1:variable});${2}
 snippet vare
-	var_dump($${1:variable}};exit;${2}
+	var_dump(${1:variable}};exit;${2}
 
 # public element
 snippet pub
@@ -268,13 +270,13 @@ snippet pubs
 	 * @return @${2}
 	 */
 	public static fun
-snippet pubv
+snippet pub$
 	/**
 	 * ${2:describe here}
 	 * @var @${3}
 	 */
 	public $${1:variable};
-snippet pubsv 
+snippet pubs$ 
 	/**
 	 * ${1:describe here}
 	 * @var @${2}
@@ -294,13 +296,13 @@ snippet pros
 	 * @return @${2}
 	 */
 	protected static fun
-snippet prov
+snippet pro$
 	/**
 	 * ${2:describe here}
 	 * @var @${3}
 	 */
 	protected $${1:variable};
-snippet prosv 
+snippet pros$ 
 	/**
 	 * ${1:describe here}
 	 * @var @${2}
@@ -320,13 +322,13 @@ snippet pris
 	 * @return @${2}
 	 */
 	private static fun
-snippet priv
+snippet pri$
 	/**
 	 * ${2:describe here}
 	 * @var @${3}
 	 */
 	private $${1:variable};
-snippet prisv 
+snippet pris$ 
 	/**
 	 * ${1:describe here}
 	 * @var @${2}
@@ -335,22 +337,66 @@ snippet prisv
 
 # comment type
 snippet @i
-	int
+	int${1}
 snippet @s
-	string
+	string${1}
 snippet @a
-	array
+	array${1}
 snippet @b
-	bool
-snippet @v
-	void
+	bool${1}
 snippet @n
-	null
+	null${1}
 
 #system function snippet
+# array
+snippet _af
+	array_flip(${1:arr})${2}
 snippet _am
-	array_merge(${1:arr1}, ${2:arr2}${3:, $arr3});
+	array_merge(${1:arr1}, ${2:arr2}${3:, $arr3})${4}
 snippet _as
-	array_search(${1:find}, ${2:array, trueType})
+	array_search(${1:find}, ${2:array, trueType})${3}
+snippet _asl
+	array_slice(${1:array}, ${2:offset}${3:, lenth, keepkey})${4}
+snippet _au
+	array_unique(${1:arr})${2}
 snippet _ake
-	array_key_exists('${1:key}', $${2:array});
+	array_key_exists('${1:key}', $${2:array})${3}
+# string
+snippet _sl
+	strlen(${1:str})${2}
+snippet _sp
+	strpos(${1:str}, ${2:find})${3}
+snippet _sr
+	str_replace(${1:find}, ${2:to}, ${3:string})${4}
+snippet _ss substr
+	substr(${1:str}, ${2:start, length})${3}
+snippet _ss strstr
+	strstr(${1:str}, ${2:endStart})${3}
+snippet _stl
+	strtolower(${1:str})${2}
+snippet _stt
+	strtotime(${1:string})${2}
+snippet _stu
+	strtoupper(${1:string})${2}
+# file 
+snippet _fe
+	file_exists(${1:filepath})${2}
+snippet _fgc
+	file_get_contents(${1:filename})${2}
+snippet _fpc
+	file_put_contents(${1:filename}, ${2:data}${3:, FILE_APPEND})${4}
+# asset
+snippet is
+	isset(${1:var})${2}
+snippet is_a
+	is_array(${1:var})${2}
+snippet is_f
+	is_file(${1:var})${2}
+snippet is_l
+	is_link(${1:var})${2}
+snippet is_n
+	is_numeric(${1:var})${2}
+snippet is_o
+	is_object(${1:var})${2}
+snippet is_s
+	is_string(${1:var})${2}

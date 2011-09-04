@@ -108,7 +108,7 @@ map <A-Right> <esc>:tabnext<CR>
 " NERDTree configure "
 """"""""""""""""""""""
 " NERDTree 界面宽度
-let NERDTreeWinSize = 27
+let NERDTreeWinSize = 22
 " 打开 NERDTree
 map <A-F10> <esc>:NERDTreeFromBookmark 
 nmap <leader>fb :NERDTreeFromBookmark 
@@ -129,7 +129,7 @@ let g:snips_author ="xwsoul"
 " 载入标签文件
 " set tags=~/.vim/data/tags/
 " 自动打开
-let Tlist_Auto_Open = 1
+let Tlist_Auto_Open = 0
 " 只显示当前文件的标签列表
 " let Tlist_Show_One_File = 1
 " Ctags 命令配置
@@ -163,9 +163,9 @@ let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'", "`": "
 " autocmd FileType python set omnifunc=pythoncomplete#Complete
 " omni for PHP
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-let php_sql_query=1
-let php_htmlInStrings=1
+"autocmd FileType python set omnifunc=pythoncomplete#Complete
+let php_sql_query=0
+let php_htmlInStrings=0
 
 
 """"""""""""""""

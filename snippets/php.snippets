@@ -27,7 +27,6 @@ snippet req
 	require '${1:file}';${2}
 snippet req1
 	require_once '${1:file}';${2}
-
 # $GLOBALS['...']
 snippet $g
 	$_GET['${1:variable}']${2}
@@ -49,7 +48,6 @@ snippet $gl
 	$GLOBALS['${1:variable}']${2: = }${3:something}${4:;}${5}
 snippet $e
 	$_ENV['${1:variable}']${2}
-
 # Start Docblock
 snippet /*
 	/**
@@ -256,7 +254,6 @@ snippet var
 	var_dump(${1:variable});${2}
 snippet vare
 	var_dump(${1:variable}};exit;${2}
-
 # public element
 snippet pub
 	/**
@@ -282,7 +279,6 @@ snippet pubs$
 	 * @var @${2}
 	 */
 	public static $${1:variable}
-
 # protected element
 snippet pro
 	/**
@@ -308,7 +304,6 @@ snippet pros$
 	 * @var @${2}
 	 */
 	protected static $${1:variable}
-
 # private element
 snippet pri
 	/**
@@ -334,7 +329,6 @@ snippet pris$
 	 * @var @${2}
 	 */
 	private static $${1:variable}
-
 # comment type
 snippet @i
 	int${1}
@@ -346,7 +340,6 @@ snippet @b
 	bool${1}
 snippet @n
 	null${1}
-
 #system function snippet
 # array
 snippet _af
@@ -388,15 +381,15 @@ snippet _fpc
 # asset
 snippet is
 	isset(${1:var})${2}
-snippet is_a
+snippet isa
 	is_array(${1:var})${2}
-snippet is_f
+snippet isf
 	is_file(${1:var})${2}
-snippet is_l
+snippet isl
 	is_link(${1:var})${2}
-snippet is_n
+snippet isn
 	is_numeric(${1:var})${2}
-snippet is_o
+snippet iso
 	is_object(${1:var})${2}
-snippet is_s
+snippet iss
 	is_string(${1:var})${2}

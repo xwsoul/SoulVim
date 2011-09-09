@@ -31,6 +31,12 @@ au filetype python set expandtab
 set wrap
 " 关闭兼容模式
 set nocp
+" 兼容 Windows
+if $OS == 'Windows_NT'
+	source $VIMRUNTIME/vimrc_example.vim
+	source $VIMRUNTIME/mswin.vim
+	" behave mswin
+endif
 " 自动加载外部改动
 " set autoread
 " 配色方案

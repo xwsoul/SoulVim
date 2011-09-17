@@ -64,6 +64,7 @@ SoulVim
 * Alt+Right-----move to right table
 * F5------------reload tag for current directory
 * Ctrl+F5-------load tag for current directory
+* Shift+F5------Add current path to tagloadr config file for loaded automatically
 * F9------------Toggle a taglist window
 * F10-----------Toggle a NerdTree window
 * Alt+F10-------Open NerdTree from bookmark
@@ -77,7 +78,7 @@ SoulVim
 * macvim
 * solarized
 
-###how to use tagloader
+###How to use tagloader
 
 1. let g:tagloader_cmd = *ctags path*
 2. let g:tagloader_filename = *tag filename (nodefault)*
@@ -86,5 +87,7 @@ SoulVim
 	* let g:tagloader_autoload = 1
 	* let g:tagloader_autoload_config = *config file path*
 	* put the full path into config file, one per line.
+
+4. if you want make current directory as automatic loading path, using `:call SoulTagAddPath()`
 
 [phplint]: http://farm7.static.flickr.com/6008/5979704329_a1899d79e1.jpg "PHPLint Snapshot"

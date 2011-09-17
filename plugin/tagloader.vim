@@ -14,8 +14,49 @@ if !executable(g:tagloader_cmd)
 	finish
 endif
 
-function! SoulTagPath()
+function SoulTagPath()
 	return $PWD . '/' . g:tagloader_filename
+endfunction
+
+function SoulTagAddPath()
+	if !exists("g:tagloader_autoload_config")
+		echoerr "Variable `g:tagloader_autoload_config` not set. "
+		return
+	endif
+	" try to make config file
+	if !filereadable(g:tagloader_autoload_config)
+		try
+			call writefile([], g:tagloader_autoload_config)
+		catch
+			echoerr "File `" . g:tagloader_autoload_config . "` is not readable."
+			return
+		endtry
+	endif
+	if !filewritable(g:tagloader_autoload_config)
+		echoerr "File `" . g:tagloader_autoload_config . " is not writable.`"
+		return
+	endif
+	let tagloader_paths = readfile(g:tagloader_autoload_config)
+	let has_entry = 0
+	for path in tagloader_paths
+		if strpart(path, 0, 1) == '#'
+			continue
+		endif
+		if strpart(path, strlen(path) - 1, 1) == '/'
+			let path = strpart(path, 0, strlen(path)-1)
+		endif
+		if $PWD == path
+			let has_entry = 1
+			break
+		endif
+	endfor
+	if has_entry
+		echo "Path `" . $PWD . "` exists."
+	else
+		let tagloader_paths = add(tagloader_paths, $PWD)
+		call writefile(tagloader_paths, g:tagloader_autoload_config)
+		echo 'Added.'
+	end
 endfunction
 
 function SoulTagLoad()
@@ -54,6 +95,7 @@ if exists("g:tagloader_autoload") && g:tagloader_autoload
 			endif
 			if $PWD == path
 				call SoulTagLoad()
+				finish
 			endif
 		endfor
 	endif

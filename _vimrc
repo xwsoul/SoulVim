@@ -148,9 +148,9 @@ let Tlist_Use_Right_Window = 1
 map <F9> <esc>:TlistToggle<CR>
 
 
-""""""""""""""""""""""
-" Tagmaker configure "
-""""""""""""""""""""""
+"""""""""""""""""""""""
+" Tagloader configure "
+"""""""""""""""""""""""
 "tag maker command
 let g:tagloader_cmd = 'ctags'
 "where to save the tags
@@ -163,6 +163,8 @@ let g:tagloader_autoload_config = $HOME.'/.vim/.tagloader'
 map <F5> <esc>:call SoulTagReload()<CR>
 " load tag file
 map <C-F5> <esc>:call SoulTagLoad()<CR>
+" add present word directory into config file
+map <S-F5> <esc>:call SoulTagAddPath()<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " auto close                                           "

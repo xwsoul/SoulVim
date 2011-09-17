@@ -10,6 +10,7 @@ SoulVim
 
 * [NerdTree](http://www.vim.org/scripts/script.php?script_id=1658)
 * [TagList](http://www.vim.org/scripts/script.php?script_id=273)
+* [tagloader](https://github.com/xwsoul/SoulVim/blob/master/plugin/tagloader.vim) (Using directory as project and generated ctags file this directory)
 * [SnipMate](http://www.vim.org/scripts/script.php?script_id=2540)
 * [Match It](http://www.vim.org/scripts/script.php?script_id=39)
 * [phplint](https://github.com/xwsoul/SoulVim/blob/master/plugin/phplint.vim) (php syntax check, Most code copied from pep8checker)
@@ -36,6 +37,7 @@ SoulVim
 
 	![Snapshot for phplint][phplint]
 
+* tagloader
 * vim rc file link shell
 * Third part tools install list
 
@@ -60,6 +62,8 @@ SoulVim
 * F4------------close current tab
 * Alt+Left------move to left table
 * Alt+Right-----move to right table
+* F5------------reload tag for current directory
+* Ctrl+F5-------load tag for current directory
 * F9------------Toggle a taglist window
 * F10-----------Toggle a NerdTree window
 * Alt+F10-------Open NerdTree from bookmark
@@ -73,5 +77,14 @@ SoulVim
 * macvim
 * solarized
 
+###how to use tagloader
+
+1. let g:tagloader_cmd = *ctags path*
+2. let g:tagloader_filename = *tag filename (nodefault)*
+3. if you want to load the tag automatically, do as follow:
+	
+	* let g:tagloader_autoload = 1
+	* let g:tagloader_autoload_config = *config file path*
+	* put the full path into config file, one per line.
 
 [phplint]: http://farm7.static.flickr.com/6008/5979704329_a1899d79e1.jpg "PHPLint Snapshot"

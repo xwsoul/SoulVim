@@ -157,7 +157,7 @@ let g:tagloader_cmd = 'ctags'
 let g:tagloader_filename = '.soultags'
 "auto load tags
 let g:tagloader_autoload = 1
-"auto load config file path: one full path each line
+"auto load config file path: one full path per line
 let g:tagloader_autoload_config = $HOME.'/.vim/.tagloader'
 " reload tag file
 map <F5> <esc>:call SoulTagReload()<CR>

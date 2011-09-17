@@ -152,13 +152,13 @@ map <F9> <esc>:TlistToggle<CR>
 " Tagmaker configure "
 """"""""""""""""""""""
 "tag maker command
-let g:tagmaker_cmd = 'ctags'
+let g:tagloader_cmd = 'ctags'
 "where to save the tags
-let g:tagmaker_filename = '.soultags'
+let g:tagloader_filename = '.soultags'
 "auto load tags
-let g:tagmaker_autoload = 1
+let g:tagloader_autoload = 1
 "auto load config file path: one full path each line
-let g:tagmaker_autoload_config = $HOME.'/.vim/tagmaker.conf'
+let g:tagloader_autoload_config = $HOME.'/.vim/.tagloader'
 " reload tag file
 map <F5> <esc>:call SoulTagReload()<CR>
 " load tag file

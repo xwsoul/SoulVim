@@ -5,17 +5,17 @@
 " URL:          http://github.com/xwsoul/SoulVim
 "
 
-if !exists("g:tagmaker_cmd")
+if !exists("g:tagloader_cmd")
 	finish
 endif
 
-if !executable(g:tagmaker_cmd)
-	echoerr "File " . g:tagmaker_cmd . " can't be executable."
+if !executable(g:tagloader_cmd)
+	echoerr "File " . g:tagloader_cmd . " can't be executable."
 	finish
 endif
 
 function! SoulTagPath()
-	return $PWD . '/' . g:tagmaker_filename
+	return $PWD . '/' . g:tagloader_filename
 endfunction
 
 function SoulTagLoad()
@@ -34,19 +34,18 @@ function SoulTagReload()
 endfunction
 
 function SoulTagMaker()
-	echo 'Tag is making...'
 	let l:mkResult = system("ctags -R -f" . SoulTagPath())
 	if empty(l:mkResult)
-		echo "OK"
+		echo "Tag generated."
 	else
 		echoerr l:mkResult
 	endif
 endfunction
 
-if exists("g:tagmaker_autoload") && g:tagmaker_autoload
-	if exists("g:tagmaker_autoload_config") && filereadable(g:tagmaker_autoload_config)
-		let tagmaker_paths = readfile(g:tagmaker_autoload_config)
-		for path in tagmaker_paths
+if exists("g:tagloader_autoload") && g:tagloader_autoload
+	if exists("g:tagloader_autoload_config") && filereadable(g:tagloader_autoload_config)
+		let tagloader_paths = readfile(g:tagloader_autoload_config)
+		for path in tagloader_paths
 			if strpart(path, 0, 1) == '#'
 				continue
 			endif

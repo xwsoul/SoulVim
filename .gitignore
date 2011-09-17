@@ -1,3 +1,4 @@
-noez.*
 .netrwhist
+.soultags
 *.pyc
+tagmaker.conf

@@ -148,6 +148,22 @@ let Tlist_Use_Right_Window = 1
 map <F9> <esc>:TlistToggle<CR>
 
 
+""""""""""""""""""""""
+" Tagmaker configure "
+""""""""""""""""""""""
+"tag maker command
+let g:tagmaker_cmd = 'ctags'
+"where to save the tags
+let g:tagmaker_filename = '.soultags'
+"auto load tags
+let g:tagmaker_autoload = 1
+"auto load config file path: one full path each line
+let g:tagmaker_autoload_config = $HOME.'/.vim/tagmaker.conf'
+" reload tag file
+map <F5> <esc>:call SoulTagReload()<CR>
+" load tag file
+map <C-F5> <esc>:call SoulTagLoad()<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " auto close                                           "
 " http://www.vim.org/scripts/script.php?script_id=2009 "

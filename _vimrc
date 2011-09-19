@@ -76,8 +76,8 @@ nmap <leader>q :q<CR>
 imap <leader># <ESC>I#
 nmap <leader># I#
 " // style comment
-imap <leader>/ <ESC>I//
-nmap <leader>/ I//
+imap <leader>/ <ESC>call SoulLineComment('//')
+nmap <leader>/ call SoulLineComment('//')
 " -- style comment
 imap <leader>- <ESC>I--
 nmap <leader>- I--

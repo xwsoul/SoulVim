@@ -76,15 +76,12 @@ nmap <leader>w :w<CR>
 " quit
 imap <leader>q <ESC>:q<CR>
 nmap <leader>q :q<CR>
-" # style comment
-imap <leader># <ESC>:call SoulLineComment('#')<CR>
-nmap <leader># :call SoulLineComment('#')<CR>
+" save and exit
+imap <leader>x <ESC>:wq<CR>
+nmap <leader>x :wq<CR>
 " // style comment
-imap <leader>/ <ESC>:call SoulLineComment('//')<CR>
-nmap <leader>/ :call SoulLineComment('//')<CR>
-" -- style comment
-imap <leader>- <ESC>:call SoulLineComment('--')<CR>
-nmap <leader>- :call SoulLineComment('--')<CR>
+imap <leader>/ <ESC>:call SoulLineComment()<CR>
+nmap <leader>/ :call SoulLineComment()<CR>
 " append ; to the end of line
 imap <leader>; <ESC>A;
 nmap <leader>; A;

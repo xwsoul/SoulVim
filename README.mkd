@@ -13,11 +13,16 @@ SoulVim
 * [tagloader](https://github.com/xwsoul/SoulVim/blob/master/plugin/tagloader.vim) (Using directory as project and generated ctags file this directory)
 * [SnipMate](http://www.vim.org/scripts/script.php?script_id=2540)
 * [Match It](http://www.vim.org/scripts/script.php?script_id=39)
-* [phplint](https://github.com/xwsoul/SoulVim/blob/master/plugin/phplint.vim) (php syntax check, Most code copied from pep8checker)
+* [Quick Buffer](http://vim.sourceforge.net/scripts/script.php?script_id=1910)
 * [pep8checker](https://github.com/xwsoul/SoulVim/blob/master/plugin/pep8checker.vim) (Sorry , I Can find this plug's origin url)
-* [Python Pyflakes]() (Some problem now)
-* [Zencoding](http://www.vim.org/scripts/script.php?script_id=2981)
 * [Auto Close](http://www.vim.org/scripts/script.php?script_id=2009)
+
+
+####filetype plugins:
+
+* [phplint](https://github.com/xwsoul/SoulVim/blob/master/plugin/phplint.vim) (php syntax check, Most code copied from pep8checker)
+* [Python Pyflakes](https://github.com/nvie/vim-pyflakes)
+* [Zencoding](http://www.vim.org/scripts/script.php?script_id=2981)
 
 
 ####syntax:
@@ -58,10 +63,6 @@ SoulVim
 	6. ,@ => My Email address
 	7. ,. => current filename
 
-* F3------------new tab
-* F4------------close current tab
-* Alt+Left------move to left table
-* Alt+Right-----move to right table
 * F5------------reload tag for current directory
 * Ctrl+F5-------load tag for current directory
 * Shift+F5------Add current path to tagloadr config file for loaded automatically

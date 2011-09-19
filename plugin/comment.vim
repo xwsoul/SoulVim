@@ -17,5 +17,5 @@ function SoulLineComment(char)
 	else
 		let l:newline = a:char . l:line
 	endif
-	call setline(winline(), l:newline)
+	call setline(".", l:newline)
 endfunction

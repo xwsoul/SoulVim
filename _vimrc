@@ -25,6 +25,10 @@ set ts=4
 " 智能空格
 set smarttab
 set ai
+" filetype
+filetype on
+" autoload filetype plugin
+filetype plugin on
 " 将Python的tab转换为空格 
 au filetype python set expandtab
 " 换行
@@ -73,14 +77,14 @@ nmap <leader>w :w<CR>
 imap <leader>q <ESC>:q<CR>
 nmap <leader>q :q<CR>
 " # style comment
-imap <leader># <ESC>I#
-nmap <leader># I#
+imap <leader># <ESC>:call SoulLineComment('#')<CR>
+nmap <leader># :call SoulLineComment('#')<CR>
 " // style comment
-imap <leader>/ <ESC>call SoulLineComment('//')
-nmap <leader>/ call SoulLineComment('//')
+imap <leader>/ <ESC>:call SoulLineComment('//')<CR>
+nmap <leader>/ :call SoulLineComment('//')<CR>
 " -- style comment
-imap <leader>- <ESC>I--
-nmap <leader>- I--
+imap <leader>- <ESC>:call SoulLineComment('--')<CR>
+nmap <leader>- :call SoulLineComment('--')<CR>
 " append ; to the end of line
 imap <leader>; <ESC>A;
 nmap <leader>; A;
@@ -94,21 +98,6 @@ imap <leader>d <C-R>=strftime("%Y-%m-%d")<CR>
 imap <leader>@ xwsoul@gmail.com
 " .就是当前的
 imap <leader>. <C-R>=expand('%')<CR>
-
-
-"""""""""""""""""""""
-" Hot keys for table "
-"""""""""""""""""""""
-" 打开新标签页
-map <F3> <esc>:tabnew 
-nmap <leader>t :tabnew<CR>
-" 关闭当前标签页
-map <F4> <esc>:tabclose<CR>
-" 标签页左移
-map <A-Left> <esc>:tabprevious<CR>
-" 标签页右移
-map <A-Right> <esc>:tabnext<CR>
-
 
 """"""""""""""""""""""
 " NERDTree configure "
@@ -132,8 +121,6 @@ let g:snips_author ="xwsoul"
 """""""""""""""""""""
 " Taglist configure "
 """""""""""""""""""""
-" 载入标签文件
-" set tags=~/.vim/data/tags/
 " 自动打开
 let Tlist_Auto_Open = 0
 " 只显示当前文件的标签列表

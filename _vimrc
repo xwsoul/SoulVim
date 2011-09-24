@@ -91,10 +91,16 @@ imap <leader>a <ESC>A
 imap <leader>t <C-R>=strftime("%Y-%m-%d %H:%M")<CR>
 " date
 imap <leader>d <C-R>=strftime("%Y-%m-%d")<CR>
-" @ 就是 at
+" @ just email
 imap <leader>@ xwsoul@gmail.com
-" .就是当前的
+" . means current
 imap <leader>. <C-R>=expand('%')<CR>
+" close tab
+imap <leader>c <ESC>:tabclose<CR>
+nmap <leader>c :tabclose<CR>
+" move to tab
+nmap <A-RIGHT> :tabnext<CR>
+nmap <A-LEFT> :tabprevious<CR>
 
 """"""""""""""""""""""
 " NERDTree configure "

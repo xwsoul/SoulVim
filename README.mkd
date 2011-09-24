@@ -62,15 +62,18 @@ SoulVim
 	5. ,d => date(Y-m-d)
 	6. ,@ => My Email address
 	7. ,. => current filename
+	7. ,c => close tab
 
-* F4------------open quick buffer
-* F5------------reload tag for current directory
-* Ctrl+F5-------load tag for current directory
-* Shift+F5------Add current path to tagloadr config file for loaded automatically
-* F9------------Toggle a taglist window
-* F10-----------Toggle a NerdTree window
-* Alt+F10-------Open NerdTree from bookmark
-* Ctrl+F10------Make a bookmark
+* Alt+Right		move to next tab
+* Alt+Left		move previous tab
+* F4			open quick buffer
+* F5			reload tag for current directory
+* Ctrl+F5		load tag for current directory
+* Shift+F5		Add current path to tagloadr config file for loaded automatically
+* F9			Toggle a taglist window
+* F10			Toggle a NerdTree window
+* Alt+F10		Open NerdTree from bookmark
+* Ctrl+F10		Make a bookmark
 
 
 ###colorscheme:

@@ -98,10 +98,10 @@ endfunction
 function s:ClearCursorLineColor()
   " only revert if our highlight is currently enabled
   if(exists("s:highlight_on") && s:highlight_on) 
-    let s:highlight_on = 0 
+    let s:highlight_on = 0
 
     " if a previous cursor guibg color was recorded, we use it
-    if(exists("s:previous_cursor_guibg")) 
+    if(exists("s:previous_cursor_guibg"))
       execute "highlight CursorLine " . s:previous_cursor_guibg
       unlet s:previous_cursor_guibg
 

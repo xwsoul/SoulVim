@@ -38,10 +38,14 @@ SoulVim
 
 
 ####Something special in SoulVim:
-	
+
 * phplint (based on pep8checker)
 
 	![Snapshot for phplint][phplint]
+
+* end line blank check
+
+	![Snapshot for end line space check][blankcheck]
 
 * tagloader
 * vim rc file link shell
@@ -88,7 +92,7 @@ SoulVim
 1. let g:tagloader_cmd = *ctags path*
 2. let g:tagloader_filename = *tag filename (nodefault)*
 3. if you want to load the tag automatically, do as follow:
-	
+
 	* let g:tagloader_autoload = 1
 	* let g:tagloader_autoload_config = *config file path*
 	* put the full path into config file, one per line.
@@ -96,3 +100,6 @@ SoulVim
 4. if you want make current directory as automatic loading path, using `:call SoulTagAddPath()`
 
 [phplint]: http://farm7.static.flickr.com/6008/5979704329_a1899d79e1.jpg "PHPLint Snapshot"
+[blankcheck]: http://farm7.static.flickr.com/6169/6197718003_73fb0b93fa_b.jpg "End line blank check."
+
+

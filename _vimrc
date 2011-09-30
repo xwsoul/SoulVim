@@ -31,10 +31,14 @@ filetype on
 filetype plugin on
 " 将Python的tab转换为空格 
 au filetype python set expandtab
+" 如果行结尾有空格,下划线提示
+au BufRead,BufNewFile *.* match Underlined /\s\+$/
 " 换行
 set wrap
 " 关闭兼容模式
 set nocp
+" 超长高亮
+set colorcolumn=81
 " 兼容 Windows
 if $OS == 'Windows_NT'
 	source $VIMRUNTIME/vimrc_example.vim

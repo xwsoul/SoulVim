@@ -44,6 +44,10 @@ if $OS == 'Windows_NT'
 	source $VIMRUNTIME/vimrc_example.vim
 	source $VIMRUNTIME/mswin.vim
 	" behave mswin
+else
+	if has('gui_running')
+		set guifont=文泉驿等宽微米黑
+	endif
 endif
 " 自动加载外部改动
 " set autoread

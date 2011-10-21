@@ -56,17 +56,19 @@ SoulVim
 
 * leader--------,
 
-	1. ,w => :w (write to file)
-	2. ,q => :q (quit)
-	2. ,x => :wq (save and exit)
-	3. ,/ => smarty line comment
-	8. ,; => append *;* to end of line
-	8. ,a => append at end of line
-	4. ,t => long formated time (Y-m-d H:M)
-	5. ,d => date(Y-m-d)
-	6. ,@ => My Email address
-	7. ,. => current filename
-	7. ,c => close tab
+	1. ,w  => :w (write to file)
+	2. ,q  => :q (quit)
+	2. ,x  => :wq (save and exit)
+	3. ,/  => smarty line comment
+	8. ,;  => append *;* to end of line
+	8. ,a  => append at end of line
+	4. ,t  => long formated time (Y-m-d H:M)
+	5. ,d  => date(Y-m-d)
+	6. ,@  => My Email address
+	7. ,.  => current filename
+	7. ,c  => close tab
+	9. ,nf => Open NerdTree from bookmark
+	9. ,nf => Make a bookmark
 
 * Alt+Right		move to next tab
 * Alt+Left		move previous tab
@@ -74,10 +76,8 @@ SoulVim
 * F5			reload tag for current directory
 * Ctrl+F5		load tag for current directory
 * Shift+F5		Add current path to tagloadr config file for loaded automatically
-* F9			Toggle a taglist window
-* F10			Toggle a NerdTree window
-* Alt+F10		Open NerdTree from bookmark
-* Ctrl+F10		Make a bookmark
+* F7			Toggle a taglist window
+* F8			Toggle a NerdTree window
 
 
 ###colorscheme:

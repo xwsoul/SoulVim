@@ -116,12 +116,9 @@ nmap <A-LEFT> :tabprevious<CR>
 " NERDTree 界面宽度
 let NERDTreeWinSize = 22
 " 打开 NERDTree
-map <A-F10> <esc>:NERDTreeFromBookmark 
-nmap <leader>fb :NERDTreeFromBookmark 
-map <C-F10> <esc>:Bookmark 
-nmap <leader>b :Bookmark 
-map <F10> <esc>:NERDTreeToggle<CR>
-
+map <F8> <esc>:NERDTreeToggle<CR>
+map <leader>nf <esc>:NERDTreeFromBookmark 
+map <leader>nb <esc>:Bookmark 
 
 """"""""""""""""""""""
 " SnipMate configure "
@@ -143,7 +140,7 @@ let Tlist_Exit_OnlyWindow = 1
 " 在右边窗口显示标签列表
 let Tlist_Use_Right_Window = 1
 " set hot key for Taglist's open and close
-map <F9> <esc>:TlistToggle<CR>
+map <F7> <esc>:TlistToggle<CR>
 
 
 """""""""""""""""""""""

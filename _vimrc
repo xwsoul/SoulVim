@@ -31,6 +31,10 @@ filetype on
 filetype plugin on
 " 将Python的tab转换为空格 
 au filetype python set expandtab
+" 将 Clojure 的tab转换为空格
+au filetype clojure set expandtab
+au filetype clojure set sw=2
+au filetype clojure set ts=2
 " 如果行结尾有空格,下划线提示
 au BufRead,BufNewFile *.* match Underlined /\s\+$/
 " 换行

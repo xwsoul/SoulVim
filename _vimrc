@@ -81,7 +81,7 @@ set noswapfile
 """"""""""""""
 " leader key "
 """"""""""""""
-let mapleader = ","
+let mapleader = "]"
 " save file
 imap <leader>w <ESC>:w<CR>a
 nmap <leader>w :w<CR>

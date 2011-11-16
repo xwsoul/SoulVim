@@ -83,17 +83,17 @@ syn keyword clojureFunc doc find-doc class bean println format
 syn keyword clojureFunc > >= < <= =
 syn keyword clojureFunc + - * / . .. quot rem inc dec
 " type test
-syn keyword clojureFunc true? false? nil? empty? zero? string? keyword? symbol? instance? even? odd? every? some not-every? not-any?
+syn keyword not clojureFunc true? false? nil? empty? zero? string? keyword? symbol? instance? even? odd? every? some not-every? not-any? contains?
 " type convert
 syn keyword clojureFunc str seq vec to-array hash-set
 "for String
 syn keyword clojureFunc interleave interpose
 "for vector & list
-syn keyword clojureFunc range repeat iterate cycle concat count reverse drop-last sorted-set sorted-map
+syn keyword clojureFunc range repeat iterate cycle concat count reverse drop drop-last sorted-set sorted-map split-at split-with doall dorun peek pop subvec
 "for map
-syn keyword clojureFunc get assoc keys
+syn keyword clojureFunc get assoc dissoc keys vals select-keys merge merge-with
 "for set
-syn keyword clojureFunc dosync conj alter
+syn keyword clojureFunc dosync conj alter union difference intersection select rename project
 "for struct
 syn keyword clojureFunc struct struct-map
 "for java.Array
@@ -104,6 +104,8 @@ syn keyword clojureFunc meta
 syn keyword clojureFunc resolve in-ns ns
 "for benchmarking
 syn keyword clojureFunc dotimes time
+"regular function
+syn keyword clojureFunc re-matcher re-seq re-find
 " constant
 syn keyword clojureConstant	*e
 " end clojure

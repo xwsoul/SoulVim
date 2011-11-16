@@ -70,7 +70,7 @@ endif
 " clojure
 syn region clojureUnquote matchgroup=Delimiter start="#{" end="}" contains=ALLBUT,clojureStruc,clojureSyntax,clojureFunc
 " syntax
-syn keyword clojureSyntax quote first rest cons apply filter map
+syn keyword clojureSyntax quote first rest cons apply filter map reduce
 syn keyword clojureSyntax def let defn fn defstruct deref ref refer use
 syn keyword clojureSyntax require load-file import
 syn keyword clojureSyntax if do when forloop recur
@@ -83,11 +83,11 @@ syn keyword clojureFunc doc find-doc class bean println format
 syn keyword clojureFunc > >= < <= =
 syn keyword clojureFunc + - * / . .. quot rem inc dec
 " type test
-syn keyword clojureFunc true? false? nil? empty? zero? string? keyword? symbol? instance?
+syn keyword clojureFunc true? false? nil? empty? zero? string? keyword? symbol? instance? even? odd? every? some not-every? not-any?
 " type convert
-syn keyword clojureFunc str seq to-array
+syn keyword clojureFunc str seq vec to-array hash-set
 "for String
-syn keyword clojureFunc interleave
+syn keyword clojureFunc interleave interpose
 "for vector & list
 syn keyword clojureFunc range repeat iterate cycle concat count reverse drop-last sorted-set sorted-map
 "for map

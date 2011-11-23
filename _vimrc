@@ -37,8 +37,6 @@ au filetype clojure set sw=2
 au filetype clojure set ts=2
 " 如果行结尾有空格,下划线提示
 au BufRead,BufNewFile *.* match Underlined /\s\+$/
-" 绑定宏
-au filetype php source $MYVIMRC/macros/php.vim
 " 换行
 set wrap
 " 关闭兼容模式
@@ -54,6 +52,8 @@ else
 	if has('gui_running')
 		set guifont=文泉驿等宽微米黑
 	endif
+	" 绑定宏
+	au filetype php source $HOME/.vim/macros/php.vim
 endif
 " 自动加载外部改动
 " set autoread

@@ -48,6 +48,7 @@ SoulVim
 	![Snapshot for end line space check][blankcheck]
 
 * tagloader
+* micro binding
 * vim rc file link shell
 * Third part tools install list
 
@@ -56,19 +57,20 @@ SoulVim
 
 * leader--------,
 
-	1. ,w  => :w (write to file)
-	2. ,q  => :q (quit)
-	2. ,x  => :wq (save and exit)
-	3. ,/  => smarty line comment
-	8. ,;  => append *;* to end of line
-	8. ,a  => append at end of line
-	4. ,t  => long formated time (Y-m-d H:M)
-	5. ,d  => date(Y-m-d)
-	6. ,@  => My Email address
-	7. ,.  => current filename
-	7. ,c  => close tab
-	9. ,nf => Open NerdTree from bookmark
-	9. ,nf => Make a bookmark
+	1. leader+w  => :w (write to file)
+	2. leader+q  => :q (quit)
+	2. leader+x  => :wq (save and exit)
+	3. leader+/  => smarty line comment
+	8. leader+;  => append *;* to end of line
+	8. leader+,  => append *,* to end of line
+	8. leader+a  => append at end of line
+	4. leader+t  => long formated time (Y-m-d H:M)
+	5. leader+d  => date(Y-m-d)
+	6. leader+@  => My Email address
+	7. leader+.  => current filename
+	7. leader+c  => close tab
+	9. leader+nf => Open NerdTree from bookmark
+	9. leader+nf => Make a bookmark
 
 * Alt+Right		move to next tab
 * Alt+Left		move previous tab

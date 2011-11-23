@@ -70,16 +70,19 @@ endif
 " clojure
 syn region clojureUnquote matchgroup=Delimiter start="#{" end="}" contains=ALLBUT,clojureStruc,clojureSyntax,clojureFunc
 " syntax
-syn keyword clojureSyntax quote first rest cons apply filter map reduce
-syn keyword clojureSyntax def let defn fn defstruct deref ref refer use
+syn keyword clojureSyntax quote cons apply filter map reduce
+syn keyword clojureSyntax def defn let letfn fn defstruct deref ref refer use
 syn keyword clojureSyntax require load-file import
-syn keyword clojureSyntax if do when forloop recur
+syn keyword clojureSyntax if do when for loop cond
 syn keyword clojureSyntax nil new
 syn keyword clojureSyntax take into
 syn keyword clojureSyntax compile
 syn keyword clojureSyntax try throw finally catch
 " function
-syn keyword clojureFunc doc find-doc class bean println format
+syn keyword clojureFunc doc find-doc class bean println format print recur
+" lazy api
+syn keyword clojureFunc lazy-seq iterate
+" cal
 syn keyword clojureFunc > >= < <= =
 syn keyword clojureFunc + - * / . .. quot rem inc dec
 " type test
@@ -89,7 +92,7 @@ syn keyword clojureFunc str seq vec to-array hash-set
 "for String
 syn keyword clojureFunc interleave interpose
 "for vector & list
-syn keyword clojureFunc range repeat iterate cycle concat count reverse drop drop-last sorted-set sorted-map split-at split-with doall dorun peek pop subvec
+syn keyword clojureFunc first rest nth range repeat cycle concat count reverse drop drop-last sorted-set sorted-map split-at split-with doall dorun peek pop subvec
 "for map
 syn keyword clojureFunc get assoc dissoc keys vals select-keys merge merge-with
 "for set

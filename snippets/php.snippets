@@ -5,9 +5,15 @@ snippet php
 	${1}
 	?>
 snippet phpl
-	<?php ${1}?>
+	<?php ${1};?>
 snippet phpe
-	<?php ec${1}?>
+	<?php ec${1};?>
+snippet ?=
+	<?= ${1:$};?>
+snippet ?inc
+	<?php include ${1}'${2}';?>
+snippet ?inc1
+	<?php include_once ${1}'${2}';?>
 snippet ec
 	echo ${1:string}
 snippet ec""
@@ -59,19 +65,23 @@ snippet doc_cp
 	 * ${1:undocumented class}
 	 * @author ${3:`g:snips_author`}
 	 */${4}
+# Function - post doc
+snippet doc_fp
+	/**
+	 * ${1:undocumented function}
+	 * @return @${2}
+	 */
 # Class Variable - post doc
 snippet doc_vp
 	/**
 	 * ${1:undocumented class variable}
 	 * @var ${2:string}
 	 */${3}
-# Class Variable
-snippet doc_v
+# Constant Definition - post doc
+snippet doc_dp
 	/**
-	 * ${3:undocumented class variable}
-	 * @var ${4:string}
-	 */
-	${1:var} $${2};${5}
+	 * ${1:undocumented constant}
+	 */${2}
 # Class
 snippet doc_c
 	/**
@@ -79,26 +89,32 @@ snippet doc_c
 	 * @packaged ${4:default}
 	 * @author ${5:`g:snips_author`}
 	 */
-	${1:}class ${2:}
-	{${6}
+	${1:}class ${2:} {
+		${6}
 	} // END $1class $2
-# Constant Definition - post doc
-snippet doc_dp
+# Function
+snippet doc_f
 	/**
-	 * ${1:undocumented constant}
-	 */${2}
+	 * ${4:undocumented function}
+	 * @param @${5} $3
+	 * @return @${6}
+	 */
+	${1}function ${2}(${3}) {
+		${7}
+	}
+# Class Variable
+snippet doc_v
+	/**
+	 * ${3:undocumented class variable}
+	 * @var ${4:string}
+	 */
+	${1:var} $${2};${5}
 # Constant Definition
 snippet doc_d
 	/**
 	 * ${3:undocumented constant}
 	 */
 	define(${1}, ${2});${4}
-# Function - post doc
-snippet doc_fp
-	/**
-	 * ${1:undocumented function}
-	 * @return @${2}
-	 */
 # Function signature
 snippet doc_s
 	/**
@@ -106,15 +122,6 @@ snippet doc_s
 	 * @return ${5:void}
 	 */
 	${1}function ${2}(${3});${7}
-# Function
-snippet doc_f
-	/**
-	 * ${4:undocumented function}
-	 * @return @${5}
-	 */
-	${1}function ${2}(${3}) {
-		${7}
-	}
 # Header
 snippet doc_h
 	/**
@@ -124,10 +131,6 @@ snippet doc_h
 	 * @copyright ${4:$2}
 	 * @created `strftime('%d %B, %Y')`
 	 */
-	
-	/**
-	 * Define DocBlock
-	 *//
 # Interface
 snippet doc_i
 	/**
@@ -162,7 +165,6 @@ snippet .
 	$this->${1}
 snippet ::
 	self::${1}
-# 
 snippet $.
 	$${1:model}->${2}
 # define(...)
@@ -172,8 +174,7 @@ snippet def
 snippet def?
 	${1}defined('${2}')${3}
 snippet wh
-	while (${1:/* condition */}) {
-		${2:// code...}
+	while (${1}) {
 	}
 # do ... while
 snippet do
@@ -181,23 +182,21 @@ snippet do
 		${2:// code... }
 	} while (${1:/* condition */});
 snippet if
-	if (${1:/* condition */}) {
-		${2:// code...}
+	if (${1}) {
 	}
 snippet ife
-	if (${1:/* condition */}) {
-		${2:// code...}
+	if (${1}) {
+		${2}
 	} else {
-		${3:// code...}
+		${3}
 	}
 	${4}
 snippet else
 	else {
-		${1:// code...}
+		${1}
 	}
 snippet elif
-	elseif (${1:/* condition */}) {
-		${2:// code...}
+	elseif (${1}) {
 	}
 # Tertiary conditional
 snippet ?
@@ -208,52 +207,52 @@ snippet =?
 snippet switch
 	switch ($${1:variable}) {
 		case '${2:value}':
-			${3:// code...}
+			${3}
 			break;
 
 		${5:case}
 		default:
-			${4:// code...}
+			${4}
 			break;
 	}
 snippet case
 	case '${1:value}':
-		${2:// code...}
+		${2}
 		break;${3}
 
 	case${4}
 snippet for
 	for ($${2:i} = 0; $$2 < ${1:count}; $$2${3:++}) {
-		${4: // code...}
+		${4}
 	}
 snippet foreach
 	foreach ($${1:variable} as $${2:key}) {
-		${3:// code...}
+		${3}
 	}
 snippet try
 	try{
-		${1://code...}
+		${1}
 	} catch(${2:Exception} $${3:e}) {
 		//echo $$3->getMessage();
 	}
 snippet fun
 	function ${1:name}(${2:$}) {
-		${3:// code...}
+		${3}
 	}
 snippet arr
 	array(
-		${1:key}=>${2:val},
-	);
+		${1}=>${2},
+	)
 snippet =arr
 	$${1:arrayName} = array(
-		${2:key}=>${3:val},
-	);
+		${2}=>${3},
+	)
 snippet =>
-	'${1:key}' => ${2:val}
+	${1} => ${2}
 snippet var
-	var_dump(${1:variable});${2}
+	var_dump(${1:var});
 snippet vare
-	var_dump(${1:variable}};exit;${2}
+	var_dump(${1:var}};exit;
 # public element
 snippet pub
 	/**
@@ -323,7 +322,7 @@ snippet pri$
 	 * @var @${3}
 	 */
 	private $${1:variable};
-snippet pris$ 
+snippet pris$
 	/**
 	 * ${1:describe here}
 	 * @var @${2}
@@ -332,6 +331,8 @@ snippet pris$
 # comment type
 snippet @i
 	int${1}
+snippet @f
+	float${1}
 snippet @s
 	string${1}
 snippet @a
@@ -381,15 +382,15 @@ snippet _fpc
 # asset
 snippet is
 	isset(${1:var})${2}
-snippet isa
+snippet _ia
 	is_array(${1:var})${2}
-snippet isf
+snippet _if
 	is_file(${1:var})${2}
-snippet isl
+snippet _il
 	is_link(${1:var})${2}
-snippet isn
+snippet _in
 	is_numeric(${1:var})${2}
-snippet iso
+snippet _io
 	is_object(${1:var})${2}
-snippet iss
+snippet _is
 	is_string(${1:var})${2}

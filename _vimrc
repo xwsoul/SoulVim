@@ -58,7 +58,7 @@ endif
 " 自动加载外部改动
 " set autoread
 " 配色方案
-color ir_black
+color eclipse
 " 文件编码
 set encoding=utf-8
 set fileencodings=utf-8,chinese

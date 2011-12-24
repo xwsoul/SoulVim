@@ -2,11 +2,11 @@
 " Author:       xwsoul (xwsoul@gmail.com)
 " Modified:     2011-07-26 14:54
 
-if !exists("simpletest_command")
+if !exists("g:simpletest_command")
   let simpletest_command = 'php'
 endif
 
-if !exists("simpletest_highlight_color")
+if !exists("g:simpletest_highlight_color")
   let simpletest_highlight_color = 'DarkMagenta'
 endif
 
@@ -19,13 +19,13 @@ function PHPSimpleTest()
 
   if match(cmd_output, 'OK') == -1
 
-	let out = []
-	for line in split(cmd_output, "\n")
-		if match(line, 'Expected .*, got') != -1
-			call add(out, line)
-		elseif match(line, "Test cases run: ") != -1
-			call add(out, line)
-		endif
+    let out = []
+    for line in split(cmd_output, "\n")
+    if match(line, 'Expected .*, got') != -1
+        call add(out, line)
+    elseif match(line, "Test cases run: ") != -1
+        call add(out, line)
+    endif
 	endfor
 	let l:error_info = join(out, "\n")
 	echo l:error_info
@@ -55,11 +55,11 @@ function PHPSimpleTest()
   " if no javascript warnings are found, we revert the cursorline color
   " and close the quick fix window
   else
-	for line in split(cmd_output, "\n")
-		if match(line, "Test cases run: ") != -1
-			echo line
-		endif
-	endfor
+    for line in split(cmd_output, "\n")
+        if match(line, "Test cases run: ") != -1
+            echo line
+        endif
+    endfor
     call s:ClearCursorLineColor()
     if(exists("s:qfix_buffer"))
       cclose

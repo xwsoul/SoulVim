@@ -16,6 +16,7 @@ SoulVim
 * [Match It](http://www.vim.org/scripts/script.php?script_id=39)
 * [Quick Buffer](http://vim.sourceforge.net/scripts/script.php?script_id=1910)
 * [phplint](https://github.com/xwsoul/SoulVim/blob/master/plugin/phplint.vim) (php syntax check, Most code copied from pep8checker.)
+* [Simpletest](https://github.com/xwsoul/SoulVim/blob/master/plugin/simpletest.vim) (php simple test runner, Most code copied from pep8checker.)
 * [pep8checker](https://github.com/xwsoul/SoulVim/blob/master/plugin/pep8checker.vim) (Sorry , I Can find this plug's origin url.)
 * [Soul Comment](https://github.com/xwsoul/SoulVim/blob/master/plugin/SoulComment.vim) (Smart comment tool for many languages.)
 
@@ -80,13 +81,13 @@ SoulVim
 * Shift+F5		Add current path to tagloadr config file for loaded automatically
 * F7			Toggle a taglist window
 * F8			Toggle a NerdTree window
+* Ctrl+r,Ctrl+t	Running simpletest for php
 
 
 ###colorscheme:
 
 * eclipse
 * ir_black
-* macvim
 * solarized
 
 ###How to use tagloader

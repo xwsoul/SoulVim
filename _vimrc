@@ -58,7 +58,7 @@ endif
 " 自动加载外部改动
 " set autoread
 " 配色方案
-color eclipse
+color ir_black
 " 文件编码
 set encoding=utf-8
 set fileencodings=utf-8,chinese
@@ -203,6 +203,12 @@ let php_htmlInStrings=0
 au VimEnter * NERDTree
 " 为每个buffer共享NERDTree镜像
 au BufEnter * NERDTreeMirror
+
+""""""""""""""""""
+" PHP Simpletest "
+""""""""""""""""""
+nmap <C-r><C-t> :call PHPSimpleTest()<CR>
+imap <C-r><C-t> <esc>:call PHPSimpleTest()<CR>
 
 
 "初始窗口的位置

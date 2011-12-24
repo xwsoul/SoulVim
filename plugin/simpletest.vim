@@ -23,6 +23,9 @@ function PHPSimpleTest()
     for line in split(cmd_output, "\n")
     if match(line, 'Expected .*, got') != -1
         call add(out, line)
+    elseif match(line, 'Unexpected .* in') != -1
+		let line = substitute(line, " in ", " at ", "g")
+        call add(out, line)
     elseif match(line, "Test cases run: ") != -1
         call add(out, line)
     endif

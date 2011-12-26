@@ -65,7 +65,9 @@ function SoulTagLoad()
 		call SoulTagMaker()
 	endif
 	exe "set tags=" . l:tagpath
-	echo 'Tag loaded.'
+	if exists("g:tagloader_loaded_notify")
+		echo 'Tag loaded.'
+	end
 endfunction
 
 function SoulTagReload()

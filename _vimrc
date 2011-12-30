@@ -204,13 +204,6 @@ au VimEnter * NERDTree
 " 为每个buffer共享NERDTree镜像
 au BufEnter * NERDTreeMirror
 
-""""""""""""""""""
-" PHP Simpletest "
-""""""""""""""""""
-nmap <C-r><C-t> :call PHPSimpleTest()<CR>
-imap <C-r><C-t> <esc>:call PHPSimpleTest()<CR>
-
-
 "初始窗口的位置
 if has("gui_running")
 	" 关闭工具栏

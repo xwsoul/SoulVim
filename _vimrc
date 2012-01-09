@@ -35,6 +35,10 @@ au filetype python set expandtab
 au filetype clojure set expandtab
 au filetype clojure set sw=2
 au filetype clojure set ts=2
+" 将 Haskell 的tab转换为空格
+au filetype haskell set expandtab
+au filetype haskell set sw=2
+au filetype haskell set ts=2
 " 如果行结尾有空格,下划线提示
 au BufRead,BufNewFile *.* match Underlined /\s\+$/
 " 换行

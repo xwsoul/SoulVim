@@ -1,5 +1,3 @@
-snippet $
-	${1:$variable}${2:, $}${3}
 snippet php
 	<?php
 	${1}
@@ -10,27 +8,18 @@ snippet phpe
 	<?php ec${1};?>
 snippet ?=
 	<?= ${1:$};?>
-snippet ?inc
-	<?php include ${1}'${2}';?>
-snippet ?inc1
-	<?php include_once ${1}'${2}';?>
 snippet ec
-	echo ${1:string}
-snippet ec""
-	echo "${1:string}"
-snippet ec"
+	echo $${1:string}
+snippet ecs
 	echo "${1:string}"
 snippet ec$
 	echo $${1:var}
-# echo function result
-snippet ecf
-	echo ${1:func}(${2})
 snippet inc
-	include '${1:file}';${2}
+	include ${1:file};${2}
 snippet inc1
-	include_once '${1:file}';${2}
+	include_once ${1:file};${2}
 snippet req
-	require '${1:file}';${2}
+	require ${1:file};${2}
 snippet req1
 	require_once '${1:file}';${2}
 # $GLOBALS['...']
@@ -50,80 +39,38 @@ snippet $s
 	$_SESSION['${1:variable}']${2}
 snippet $se
 	$_SERVER['${1:variable}']${2}
-snippet $gl
-	$GLOBALS['${1:variable}']${2: = }${3:something}${4:;}${5}
-snippet $e
-	$_ENV['${1:variable}']${2}
 # Start Docblock
 snippet /*
 	/**
 	 * ${1}
 	 */
+snippet /**
+	/**
+	 * ${1}
+	 */
 # Class - post doc
-snippet doc_cp
+snippet /*c
 	/**
 	 * ${1:undocumented class}
+	 *
 	 * @author ${3:`g:snips_author`}
 	 */${4}
-# Function - post doc
-snippet doc_fp
-	/**
-	 * ${1:undocumented function}
-	 * @return @${2}
-	 */
 # Class Variable - post doc
-snippet doc_vp
+snippet /*v
 	/**
 	 * ${1:undocumented class variable}
+	 *
 	 * @var ${2:string}
 	 */${3}
-# Constant Definition - post doc
-snippet doc_dp
+# Function - post doc
+snippet /*f
 	/**
-	 * ${1:undocumented constant}
-	 */${2}
-# Class
-snippet doc_c
-	/**
-	 * ${3:undocumented class}
-	 * @packaged ${4:default}
-	 * @author ${5:`g:snips_author`}
+	 * ${1:undocumented function}
+	 *
+	 * @return @${2}
 	 */
-	${1:}class ${2:} {
-		${6}
-	} // END $1class $2
-# Function
-snippet doc_f
-	/**
-	 * ${4:undocumented function}
-	 * @param @${5} $3
-	 * @return @${6}
-	 */
-	${1}function ${2}(${3}) {
-		${7}
-	}
-# Class Variable
-snippet doc_v
-	/**
-	 * ${3:undocumented class variable}
-	 * @var ${4:string}
-	 */
-	${1:var} $${2};${5}
-# Constant Definition
-snippet doc_d
-	/**
-	 * ${3:undocumented constant}
-	 */
-	define(${1}, ${2});${4}
-# Function signature
-snippet doc_s
-	/**
-	 * ${4:undocumented function}
-	 * @return ${5:void}
-	 */
-	${1}function ${2}(${3});${7}
 # Header
-snippet doc_h
+snippet /*h
 	/**
 	 * ${1}
 	 * @author ${2:`g:snips_author`}
@@ -131,19 +78,30 @@ snippet doc_h
 	 * @copyright ${4:$2}
 	 * @created `strftime('%d %B, %Y')`
 	 */
-# Interface
-snippet doc_i
-	/**
-	 * ${2:undocumented class}
-	 * @author ${4:`g:snips_author`}
-	 */
-	interface ${1:} {
-		${5}
-	}
+# comment type
+snippet @p
+	@param @${1}
+snippet @r
+	@return @${1}
+snippet @v
+	@var @${1}
+snippet @i
+	integer${1: $}${2}
+snippet @f
+	float${1: $}${2}
+snippet @s
+	string${1: $}${2}
+snippet @a
+	array${1: $}${2}
+snippet @b
+	bool$${1: $}${2}
+snippet @n
+	null${1: $}${2}
 # class ...
 snippet class
 	/**
 	 * ${2}
+	 *
 	 * ${3:some describe}
 	 */
 	class ${1:ClassName} {
@@ -196,14 +154,12 @@ snippet else
 		${1}
 	}
 snippet elif
-	elseif (${1}) {
+	else if (${1}) {
 	}
 # Tertiary conditional
 snippet ?
 	(${1:condition}) ? ${2:a} : ${3:b};${4}
 # Tertiary conditional and return Value
-snippet =?
-	$${1:retVal} = (${2:condition}) ? ${3:a} : ${4:b};${5}
 snippet switch
 	switch ($${1:variable}) {
 		case '${2:value}':
@@ -222,7 +178,7 @@ snippet case
 
 	case${4}
 snippet for
-	for ($${2:i} = 0; $$2 < ${1:count}; $$2${3:++}) {
+	for ($${2:i} = 0; $${2} < ${1:count}; $${2}${3:++}) {
 		${4}
 	}
 snippet foreach
@@ -240,19 +196,15 @@ snippet fun
 		${3}
 	}
 snippet arr
-	array(
-		${1}=>${2},
-	)
-snippet =arr
-	$${1:arrayName} = array(
-		${2}=>${3},
-	)
+	array(${1})
 snippet =>
 	${1} => ${2}
 snippet var
 	var_dump(${1:var});
 snippet vare
 	var_dump(${1:var});exit;
+snippet re
+	return ${1};
 # public element
 snippet pub
 	/**
@@ -272,7 +224,7 @@ snippet pub$
 	 * @var @${3}
 	 */
 	public $${1:variable};
-snippet pubs$ 
+snippet pubs$
 	/**
 	 * ${1:describe here}
 	 * @var @${2}
@@ -297,7 +249,7 @@ snippet pro$
 	 * @var @${3}
 	 */
 	protected $${1:variable};
-snippet pros$ 
+snippet pros$
 	/**
 	 * ${1:describe here}
 	 * @var @${2}
@@ -328,19 +280,6 @@ snippet pris$
 	 * @var @${2}
 	 */
 	private static $${1:variable}
-# comment type
-snippet @i
-	int${1}
-snippet @f
-	float${1}
-snippet @s
-	string${1}
-snippet @a
-	array${1}
-snippet @b
-	bool${1}
-snippet @n
-	null${1}
 #system function snippet
 # array
 snippet _af

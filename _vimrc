@@ -22,6 +22,8 @@ set foldmethod=syntax
 set sw=2
 " 制表符长度
 set ts=2
+" Python 制表符宽度 - pep8
+au filetype python set ts = 4
 " tab转换为空格 
 set expandtab
 " 智能空格

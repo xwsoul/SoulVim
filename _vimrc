@@ -14,6 +14,8 @@
 set nu
 " 高亮代码
 set hls
+" 语法高亮
+syntax on
 " 宽字符支持
 set ambiwidth=double
 " 代码折叠

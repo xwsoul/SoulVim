@@ -1,0 +1,48 @@
+# package
+snippet pack
+	package ${1:main}
+# import
+snippet imp
+	import (
+		"$1"$2
+	)
+#const
+snippet con
+	const (
+		$1 = $2
+	)
+#type
+snippet type
+	type ${1:name} struct {
+		$2
+	}
+# if
+snippet if
+	if ${1:cond} {
+		$2
+	}
+# for satement
+snippet for
+	for ${1} {
+	}
+# function
+snippet fun
+	func ${1:name}($2) $3 {
+		$4
+	}
+# function main
+snippet main
+	func main() {
+		$1
+	}
+# type
+snippet @n
+	nil
+snippet @i
+	int
+snippet @s
+	string
+snippet @u3
+	uint32
+snippet @u6
+	uint64

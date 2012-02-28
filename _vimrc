@@ -20,7 +20,7 @@ syntax on
 set ambiwidth=double
 " 代码折叠
 set foldmethod=syntax
-" 空格宽度
+" 缩进空格宽度
 set sw=2
 " 制表符长度
 set ts=2
@@ -28,7 +28,7 @@ set ts=2
 au filetype python set sw=4
 au filetype python set ts=4
 " tab转换为空格 
-set expandtab
+auto filetype python set expandtab
 " 智能空格
 set smarttab
 set ai

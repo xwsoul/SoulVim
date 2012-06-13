@@ -87,18 +87,24 @@ SoulVim
 ###colorscheme:
 
 * eclipse
-* ir_black
+* ir\_black
 * solarized
 
 ###How to use tagloader
 
-1. let g:tagloader_cmd = *ctags path*
-2. let g:tagloader_filename = *tag filename (nodefault)*
+1. let g:tagloader\_cmd = *ctags path*
+2. let g:tagloader\_filename = *tag filename (nodefault)*
 3. if you want to load the tag automatically, do as follow:
 
 	* let g:tagloader_autoload = 1
 	* let g:tagloader_autoload_config = *config file path*
 	* put the full path into config file, one per line.
+
+###PHP Settings for phplint
+
+1. no starting errors
+2. display\_error = On
+3. error\_reporting = E\_ALL (or other you like)
 
 4. if you want make current directory as automatic loading path, using `:call SoulTagAddPath()`
 

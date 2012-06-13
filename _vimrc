@@ -48,6 +48,7 @@ set colorcolumn=81
 if $OS == 'Windows_NT'
 	source $VIMRUNTIME/vimrc_example.vim
 	source $VIMRUNTIME/mswin.vim
+	set guifont=Consolas:h11:i
 	" behave mswin
 else
 	if has('gui_running')

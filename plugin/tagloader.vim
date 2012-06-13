@@ -14,8 +14,10 @@ if !executable(g:tagloader_cmd)
 	finish
 endif
 
+let s:pwd = expand("%:h")
+
 function SoulTagPath()
-	return $PWD . '/' . g:tagloader_filename
+	return s:pwd . '/' . g:tagloader_filename
 endfunction
 
 function SoulTagAddPath()
@@ -45,15 +47,15 @@ function SoulTagAddPath()
 		if strpart(path, strlen(path) - 1, 1) == '/'
 			let path = strpart(path, 0, strlen(path)-1)
 		endif
-		if $PWD == path
+		if s:pwd == path
 			let has_entry = 1
 			break
 		endif
 	endfor
 	if has_entry
-		echo "Path `" . $PWD . "` exists."
+		echo "Path `" . s:pwd . "` exists."
 	else
-		let tagloader_paths = add(tagloader_paths, $PWD)
+		let tagloader_paths = add(tagloader_paths, s:pwd)
 		call writefile(tagloader_paths, g:tagloader_autoload_config)
 		echo 'Added.'
 	end
@@ -95,7 +97,7 @@ if exists("g:tagloader_autoload") && g:tagloader_autoload
 			if strpart(path, strlen(path) - 1, 1) == '/'
 				let path = strpart(path, 0, strlen(path)-1)
 			endif
-			if $PWD == path
+			if s:pwd == path
 				call SoulTagLoad()
 				finish
 			endif

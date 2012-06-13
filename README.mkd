@@ -98,15 +98,14 @@ SoulVim
 
 	* let g:tagloader_autoload = 1
 	* let g:tagloader_autoload_config = *config file path*
-	* put the full path into config file, one per line.
+	* put the full path into config file, one per line.*
+4. if you want make current directory as automatic loading path, using `:call SoulTagAddPath()`
 
 ###PHP Settings for phplint
 
 1. no starting errors
 2. display\_error = On
 3. error\_reporting = E\_ALL (or other you like)
-
-4. if you want make current directory as automatic loading path, using `:call SoulTagAddPath()`
 
 [phplint]: http://farm7.static.flickr.com/6008/5979704329_a1899d79e1.jpg "PHPLint Snapshot"
 [blankcheck]: http://farm7.static.flickr.com/6169/6197718003_73fb0b93fa_b.jpg "End line blank check."

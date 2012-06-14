@@ -127,9 +127,9 @@ nmap <A-LEFT> :tabprevious<CR>
 " NERDTree 界面宽度
 let NERDTreeWinSize = 22
 " 打开 NERDTree
-map <F8> <esc>:NERDTreeToggle<CR>
-map <leader>nf <esc>:NERDTreeFromBookmark 
-map <leader>nb <esc>:Bookmark 
+map <F8> <ESC>:NERDTreeToggle<CR>
+map <leader>nf <ESC>:NERDTreeFromBookmark 
+map <leader>nb <ESC>:Bookmark 
 
 """"""""""""""""""""""
 " SnipMate configure "
@@ -151,7 +151,7 @@ let Tlist_Exit_OnlyWindow = 1
 " 在右边窗口显示标签列表
 let Tlist_Use_Right_Window = 1
 " set hot key for Taglist's open and close
-map <F7> <esc>:TlistToggle<CR>
+map <F7> <ESC>:TlistToggle<CR>
 
 
 """""""""""""""""""""""
@@ -165,12 +165,14 @@ let g:tagloader_filename = '.soultags'
 let g:tagloader_autoload = 1
 "auto load config file path: one full path per line
 let g:tagloader_autoload_config = $HOME.'/.vim/.tagloader'
+" list all tags
+nmap <C-\> :call SoulTagList()<CR>
 " reload tag file
-map <F5> <esc>:call SoulTagReload()<CR>
+map <F5> <ESC>:call SoulTagReload()<CR>
 " load tag file
-map <C-F5> <esc>:call SoulTagLoad()<CR>
+map <C-F5> <ESC>:call SoulTagLoad()<CR>
 " add present word directory into config file
-map <S-F5> <esc>:call SoulTagAddPath()<CR>
+map <S-F5> <ESC>:call SoulTagAddPath()<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " auto close                                           "

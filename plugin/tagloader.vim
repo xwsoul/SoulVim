@@ -14,7 +14,11 @@ if !executable(g:tagloader_cmd)
 	finish
 endif
 
-let s:pwd = expand("%:h")
+if $OS == 'Windows_NT'
+	let s:pwd = expand("%:h")
+else
+	let s:pwd = $PWD
+endif
 
 function SoulTagPath()
 	return s:pwd . '/' . g:tagloader_filename
@@ -84,6 +88,15 @@ function SoulTagMaker()
 		echo "Tag generated."
 	else
 		echoerr l:mkResult
+	endif
+endfunction
+
+function SoulTagList()
+	let l:cWord = expand("<cword>")
+	if empty(l:cWord)
+		echo "Please select a word."
+	else
+		exe "ts " . l:cWord
 	endif
 endfunction
 

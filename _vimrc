@@ -24,11 +24,6 @@ set foldmethod=syntax
 set sw=2
 " 制表符长度
 set ts=2
-" Python 制表符宽度 - pep8
-au filetype python set sw=4
-au filetype python set ts=4
-" tab转换为空格 
-auto filetype python set expandtab
 " 智能空格
 set smarttab
 set ai
@@ -54,8 +49,6 @@ else
 	if has('gui_running')
 		set guifont=文泉驿等宽微米黑
 	endif
-	" 绑定宏
-	au filetype php source $HOME/.vim/macros/php.vim
 endif
 " 自动加载外部改动
 " set autoread

@@ -14,14 +14,8 @@ if !executable(g:tagloader_cmd)
 	finish
 endif
 
-if $OS == 'Windows_NT'
-	let s:pwd = expand("%:h")
-else
-	let s:pwd = $PWD
-endif
-
 function SoulTagPath()
-	return s:pwd . '/' . g:tagloader_filename
+	return getcwd() . '/' . g:tagloader_filename
 endfunction
 
 function SoulTagAddPath()
@@ -51,15 +45,15 @@ function SoulTagAddPath()
 		if strpart(path, strlen(path) - 1, 1) == '/'
 			let path = strpart(path, 0, strlen(path)-1)
 		endif
-		if s:pwd == path
+		if getcwd() == path
 			let has_entry = 1
 			break
 		endif
 	endfor
 	if has_entry
-		echo "Path `" . s:pwd . "` exists."
+		echo "Path `" . getcwd() . "` exists."
 	else
-		let tagloader_paths = add(tagloader_paths, s:pwd)
+		let tagloader_paths = add(tagloader_paths, getcwd())
 		call writefile(tagloader_paths, g:tagloader_autoload_config)
 		echo 'Added.'
 	end
@@ -100,20 +94,25 @@ function SoulTagList()
 	endif
 endfunction
 
-if exists("g:tagloader_autoload") && g:tagloader_autoload
-	if exists("g:tagloader_autoload_config") && filereadable(g:tagloader_autoload_config)
-		let tagloader_paths = readfile(g:tagloader_autoload_config)
-		for path in tagloader_paths
-			if strpart(path, 0, 1) == '#'
-				continue
-			endif
-			if strpart(path, strlen(path) - 1, 1) == '/'
-				let path = strpart(path, 0, strlen(path)-1)
-			endif
-			if s:pwd == path
-				call SoulTagLoad()
-				finish
-			endif
-		endfor
+function SoulTagAutoload()
+	if exists("g:tagloader_autoload") && g:tagloader_autoload
+		if exists("g:tagloader_autoload_config") && filereadable(g:tagloader_autoload_config)
+			let tagloader_paths = readfile(g:tagloader_autoload_config)
+			let loadtag = 0
+			for path in tagloader_paths
+				if strpart(path, 0, 1) == '#'
+					continue
+				endif
+				if strpart(path, strlen(path) - 1, 1) == '/'
+					let path = strpart(path, 0, strlen(path)-1)
+				endif
+				if getcwd() == path
+					call SoulTagLoad()
+					break
+				endif
+			endfor
+		endif
 	endif
-endif
+endfunction
+
+call SoulTagAutoload()

@@ -121,8 +121,6 @@ nmap <A-LEFT> :tabprevious<CR>
 let NERDTreeWinSize = 22
 " 打开 NERDTree
 map <F8> <ESC>:NERDTreeToggle<CR>
-map <leader>nf <ESC>:NERDTreeFromBookmark 
-map <leader>nb <ESC>:Bookmark 
 
 """"""""""""""""""""""
 " SnipMate configure "
@@ -189,9 +187,12 @@ let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'", "`": "
 " omni for PHP
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 "autocmd FileType python set omnifunc=pythoncomplete#Complete
+
+"""""""""""""""""
+" Other for PHP "
+"""""""""""""""""
 let php_sql_query=0
 let php_htmlInStrings=0
-
 
 """"""""""""""""
 " auto command "

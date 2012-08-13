@@ -149,10 +149,9 @@ let g:tagloader_filename = '.soultags'
 nmap <C-\> :call SoulTagList()<CR>
 " reload tag file
 map <F5> <ESC>:call SoulTagReload()<CR>
-" load tag file
-map <C-F5> <ESC>:call SoulTagLoad()<CR>
 " add present word directory into config file
 map <S-F5> <ESC>:Bookmark 
+map <C-l>p <ESC>:SoulProject 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " auto close                                           "

@@ -25,13 +25,11 @@ endfunction
 
 function SoulTagLoad()
 	call SoulTagMaker()
-	let l:tagpath = SoulTagPath()
-	exe "set tags=" . l:tagpath
+	exe "set tags=" . SoulTagPath()
 endfunction
 
 function SoulTagReload()
-	call SoulTagMaker()
-	exe "set tags=" . SoulTagPath()
+	call SoulTagLoad()
 	echo 'Tag reloaded.'
 endfunction
 

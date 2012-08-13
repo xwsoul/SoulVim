@@ -11,14 +11,14 @@ SoulVim
 * [Auto Close](http://www.vim.org/scripts/script.php?script_id=2009)
 * [NerdTree](http://www.vim.org/scripts/script.php?script_id=1658)
 * [TagList](http://www.vim.org/scripts/script.php?script_id=273)
-* [tagloader](https://github.com/xwsoul/SoulVim/blob/master/plugin/tagloader.vim) (Using directory as project and generated ctags file this directory.)
 * [SnipMate](http://www.vim.org/scripts/script.php?script_id=2540)
 * [Match It](http://www.vim.org/scripts/script.php?script_id=39)
 * [Quick Buffer](http://vim.sourceforge.net/scripts/script.php?script_id=1910)
 * [phplint](https://github.com/xwsoul/SoulVim/blob/master/plugin/phplint.vim) (php syntax check, Most code copied from pep8checker.)
 * [Simpletest](https://github.com/xwsoul/SoulVim/blob/master/plugin/simpletest.vim) (php simple test runner, Most code copied from pep8checker.)
 * [pep8checker](https://github.com/xwsoul/SoulVim/blob/master/plugin/pep8checker.vim) (Sorry , I Can find this plug's origin url.)
-* [Soul Comment](https://github.com/xwsoul/SoulVim/blob/master/plugin/SoulComment.vim) (Smart comment tool for many languages.)
+* [SoulProject](https://github.com/xwsoul/SoulVim/blob/master/plugin/SoulProject.vim)
+* [SoulComment](https://github.com/xwsoul/SoulVim/blob/master/plugin/SoulComment.vim) (Smart comment tool for many languages.)
 
 
 ####filetype plugins:
@@ -48,7 +48,7 @@ SoulVim
 
 	![Snapshot for end line space check][blankcheck]
 
-* tagloader
+* SoulProject
 * micro binding
 * vim rc file link shell
 * Third part tools install list
@@ -70,18 +70,15 @@ SoulVim
 	6. leader+@  => My Email address
 	7. leader+.  => current filename
 	7. leader+c  => close tab
-	9. leader+nf => Open NerdTree from bookmark
-	9. leader+nf => Make a bookmark
 
 * Alt+Right		move to next tab
 * Alt+Left		move previous tab
 * F4			open quick buffer
 * F5			reload tag for current directory
-* Ctrl+F5		load tag for current directory
-* Shift+F5		Add current path to tagloadr config file for loaded automatically
+* Shift+F5		Add current path as bookmark
 * F7			Toggle a taglist window
 * F8			Toggle a NerdTree window
-* Ctrl+r,Ctrl+t	Running simpletest for php
+* Ctrl+l,p	:SoulProject
 
 
 ###colorscheme:

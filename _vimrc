@@ -10,36 +10,35 @@
 """"""""""""""""""""
 " common configure "
 """"""""""""""""""""
-" 显示行号
+" line num
 set nu
-" 高亮代码
+" code hightlight
 set hls
-" 语法高亮
 syntax on
-" 宽字符支持
+" width char
 set ambiwidth=double
-" 代码折叠
+" cold folding
 set foldmethod=syntax
-" 缩进空格宽度
+" space width
 set sw=2
-" 制表符长度
+" table length
 set ts=2
-" 智能空格
+" smart tab
 set smarttab
 set ai
 " filetype
 filetype on
 " autoload filetype plugin
 filetype plugin on
-" 如果行结尾有空格,下划线提示
+" show blank at the end of a line
 au BufRead,BufNewFile *.* match Underlined /\s\+$/
-" 换行
+" wrapping
 set wrap
-" 关闭兼容模式
+" no cp
 set nocp
-" 超长高亮
+" line is too long
 set colorcolumn=81
-" 兼容 Windows
+" for Windows
 if $OS == 'Windows_NT'
 	source $VIMRUNTIME/vimrc_example.vim
 	source $VIMRUNTIME/mswin.vim
@@ -50,24 +49,20 @@ else
 		set guifont=文泉驿等宽微米黑
 	endif
 endif
-" 自动加载外部改动
+" 
 " set autoread
-" 配色方案
 color molokai
-" 文件编码
+" file coding
 set encoding=utf-8
 set fileencodings=utf-8,chinese
 language messages zh_CN.utf-8
-" 加载其他文件
+" other file
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
-" 加载自定义的函数
-" source ~/.vim/soul/Soul.vim
 " source $VIMRUNTIME/mswin.vim
 " behave mswin
-" 禁用自动备份
 set nobackup
-" 禁用swp文件
+" no swp
 set nowb
 set noswapfile
 " spell check
@@ -117,9 +112,9 @@ nmap <A-LEFT> :tabprevious<CR>
 """"""""""""""""""""""
 " NERDTree configure "
 """"""""""""""""""""""
-" NERDTree 界面宽度
+" NERDTree width
 let NERDTreeWinSize = 22
-" 打开 NERDTree
+" map for NERDTree
 map <F8> <ESC>:NERDTreeToggle<CR>
 
 """"""""""""""""""""""
@@ -131,15 +126,13 @@ let g:snips_author ="xwsoul"
 """""""""""""""""""""
 " Taglist configure "
 """""""""""""""""""""
-" 自动打开
 let Tlist_Auto_Open = 0
-" 只显示当前文件的标签列表
-" let Tlist_Show_One_File = 1
-" Ctags 命令配置
+" show tags for current file only
+let Tlist_Show_One_File = 1
+" Ctags command
 let Tlist_Ctags_Cmd = 'ctags'
-" 如果标签列表页是当前窗口的最后一个页面则自动关闭
 let Tlist_Exit_OnlyWindow = 1
-" 在右边窗口显示标签列表
+" taglist on the right
 let Tlist_Use_Right_Window = 1
 " set hot key for Taglist's open and close
 map <F7> <ESC>:TlistToggle<CR>
@@ -152,10 +145,6 @@ map <F7> <ESC>:TlistToggle<CR>
 let g:tagloader_cmd = 'ctags'
 "where to save the tags
 let g:tagloader_filename = '.soultags'
-"auto load tags
-let g:tagloader_autoload = 1
-"auto load config file path: one full path per line
-let g:tagloader_autoload_config = $HOME.'/.vim/.tagloader'
 " list all tags
 nmap <C-\> :call SoulTagList()<CR>
 " reload tag file
@@ -163,7 +152,7 @@ map <F5> <ESC>:call SoulTagReload()<CR>
 " load tag file
 map <C-F5> <ESC>:call SoulTagLoad()<CR>
 " add present word directory into config file
-map <S-F5> <ESC>:call SoulTagAddPath()<CR>
+map <S-F5> <ESC>:Bookmark 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " auto close                                           "
@@ -175,7 +164,6 @@ let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'", "`": "
 """""""""""
 " matchit "
 """"""""'""
-" 关闭自动加载插件
 "let loaded_matchit = 1
 
 
@@ -197,14 +185,14 @@ let php_htmlInStrings=0
 """"""""""""""""
 " auto command "
 """"""""""""""""
-" 自动打开 NERDTree
+" NERDTree automatic
 au VimEnter * NERDTree
-" 为每个buffer共享NERDTree镜像
+" Share NERDTree Mirror
 au BufEnter * NERDTreeMirror
 
-"初始窗口的位置
+"Position when init
 if has("gui_running")
-	" 关闭工具栏
+	" close toolbar
 	set guioptions-=T
-	winpos 0 0
+	winpos 100 50
 endif

@@ -9,8 +9,6 @@ snippet phpe
 snippet ?=
 	<?= ${1:$};?>
 snippet ec
-	echo $${1:string}
-snippet ecs
 	echo "${1:string}"
 snippet ec$
 	echo $${1:var}
@@ -73,6 +71,7 @@ snippet /*f
 snippet /*h
 	/**
 	 * ${1}
+	 *
 	 * @author ${2:`g:snips_author`}
 	 * @version ${3:$Id$}
 	 * @copyright ${4:$2}
@@ -94,17 +93,25 @@ snippet @s
 snippet @a
 	array${1: $}${2}
 snippet @b
-	bool$${1: $}${2}
+	bool${1: $}${2}
 snippet @n
 	null${1: $}${2}
 # class ...
-snippet class
+snippet cl
 	/**
 	 * ${2}
 	 *
 	 * ${3:some describe}
 	 */
 	class ${1:ClassName} {
+	}
+snippet cle
+	/**
+	 * ${2}
+	 *
+	 * ${3:some describe}
+	 */
+	class ${1:ClassName} extends ${2:ParentClass} {
 	}
 snippet __co
 	/**
@@ -149,7 +156,7 @@ snippet ife
 		${3}
 	}
 	${4}
-snippet else
+snippet el
 	else {
 		${1}
 	}
@@ -158,31 +165,33 @@ snippet elif
 	}
 # Tertiary conditional
 snippet ?
-	(${1:condition}) ? ${2:a} : ${3:b};${4}
+	(${1:condition})?${2:a}:${3:b};${4}
 # Tertiary conditional and return Value
-snippet switch
+snippet sw
 	switch ($${1:variable}) {
 		case '${2:value}':
 			${3}
 			break;
-
-		${5:case}
+		${5:ca}
 		default:
 			${4}
 			break;
 	}
-snippet case
+snippet ca
 	case '${1:value}':
 		${2}
 		break;${3}
-
 	case${4}
 snippet for
-	for ($${2:i} = 0; $${2} < ${1:count}; $${2}${3:++}) {
+	for (${1:$i}=0;$1<${2:count};$1${3:++}) {
 		${4}
 	}
+snippet fore
+	foreach ($${1:variable} as $${2:val}) {
+		${3}
+	}
 snippet foreach
-	foreach ($${1:variable} as $${2:key}) {
+	foreach ($${1:variable} as $${2:key} => $${3:val}) {
 		${3}
 	}
 snippet try

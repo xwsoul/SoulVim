@@ -19,10 +19,12 @@ syntax on
 set ambiwidth=double
 " cold folding
 set foldmethod=syntax
+" tab转换为空格
+set expandtab
 " space width
-set sw=2
+set sw=4
 " table length
-set ts=2
+set ts=4
 " smart tab
 set smarttab
 set ai

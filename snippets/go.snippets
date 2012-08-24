@@ -1,131 +1,135 @@
 # package
 snippet pack
-	package ${1:main}$2
+	package ${1:main}${2}
 snippet pkg
-	package ${1:main}$2
+	package ${1:main}${2}
 # import
 snippet imp
-	import "$1"$2
-snippet imp(
+	import "${1}"${2}
+snippet impm
 	import (
-		"$1"$2
-	)$3
+		"${1}"${2}
+	)${3}
 # import fmt
 snippet impf
-	import "fmt"$1
+	import "fmt"${1}
 # import testing
 snippet impt
-	import "testing"$1
+	import "testing"${1}
 #const
 snippet con
-	const $1 = $2
-snippet con(
+	const ${1} = ${2}
+snippet conm
 	const (
-		$1 = $2
+		${1} = ${2}
 	)
+snippet =
+	${1} = ${2}
 #type
 snippet ts
 	type ${1:name} struct {
-		$2
+		${2}
 	}
 snippet ti
 	type ${1:name} interface {
-		$2
+		${2}
 	}
 # if
 snippet if
 	if ${1:cond} {
-		$2
-	}
+		${2}
+	}${3}
 snippet el
 	else {
-	}
+		${1}
+	}${2}
 snippet ifel
 	if ${1:cond} {
-		$2
+		${2}
 	} else {
-		$3
-	}
+		${3}
+	}${4}
 # for satement
 snippet for
 	for ${1} {
+		${2}
 	}
 # switch satement
 snippet sw
-	switch $1{
-		case $2:
-			$3
-		${5:case}$6
+	switch ${1}{
+		case ${2}:
+			${3}
+		${5:case}${6}
 		default:
-			$4
+			${4}
 	}
 snippet case
-	case $1:
-		$2
-	${3:case}$4
+	case ${1}:
+		${2}
+	${3:case}${4}
 snippet fall
-	fallthrough$1
+	fallthrough${1}
 # function
 snippet fun
-	func ${1:name}($2) $3{
-		$4
+	func ${1:name}(${2}) ${3}{
+		${4}
 	}
 snippet func
-	func $1 ${2:name}($3) $4{
-		$5
+	func (${1}) ${2:name}(${3}) ${4}{
+		${5}
 	}
 snippet re
-	return $1
+	return ${1}
 snippet def
-	defer $1
+	defer ${1}
 # function main
 snippet main
 	func main() {
-		$1
+		${1}
 	}
 # allcate
 snippet new
-	new($1)
+	new(${1})
 snippet make
-	make($1)
+	make(${1})
 #var
 snippet var
-	var $1 ${2:type}$3
+	var ${1} ${2:type}${3}
 snippet var=
-	var $1 ${2:type} = $3
+	var ${1} ${2:type} = ${3}
 snippet :=
-	$1 := $2
+	${1} := ${2}
 # type
 snippet b
-	byte$1
+	byte${1}
 snippet e
-	error$1
+	error${1}
 snippet f
-	float$1
+	float${1}
 snippet i
-	int$1
+	int${1}
 snippet n
-	nil$1
+	nil${1}
 snippet r
-	rune$1
+	rune${1}
 snippet s
-	string$1
+	string${1}
 #functions
 snippet f.P
-	fmt.Printf("$1"${2:, var})$3
+	fmt.Printf("${1}"${2:, var})${3}
 snippet fl.B
-	flag.Bool("$1", $2, "$3")
+	flag.Bool("${1}", ${2}, "${3}")
 snippet fl.S
-	flag.String("$1", "$2", "$3")
+	flag.String("${1}", "${2}", "${3}")
 snippet fl.P
 	flag.Parse()
 snippet t.F
-	${1:t}.Fail()$2
+	${1:t}.Fail()${2}
 snippet t.FN
-	${1:t}.FailNow()$2
+	${1:t}.FailNow()${2}
 snippet t.L
-	${1:t}.Log("$2")$3
+	${1:t}.Log("${2}")${3}
 snippet t.Fa
-	${1:t}.Fatal("$2")$3
+	${1:t}.Fatal("${2}")${3}
 snippet o.O
-	os.Open("$1")
+	os.Open("${1}")

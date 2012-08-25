@@ -46,7 +46,4 @@ au BufNewFile,BufRead *.rabl			set filetype=ruby
 " Jbuilder
 au BufNewFile,BufRead *.jbuilder		set filetype=ruby
 
-" tab转换为空格
-au filetype ruby set expandtab
-
 " vim: nowrap sw=2 sts=2 ts=8 noet:

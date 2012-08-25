@@ -34,7 +34,7 @@ function SoulTagReload()
 endfunction
 
 function SoulTagMaker()
-	let l:mkResult = system("ctags -R -f" . SoulTagPath())
+	let l:mkResult = system("ctags --sort=yes -R -f " . SoulTagPath())
 	if !empty(l:mkResult)
 		echoerr l:mkResult
 	endif

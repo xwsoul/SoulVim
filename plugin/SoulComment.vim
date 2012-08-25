@@ -5,7 +5,7 @@
 " URL:          http://github.com/xwsoul/SoulVim
 "
 
-let s:lanMaps = {'c': '//', 'cpp': '//', 'lua': '--', 'php': '//', 'python': '#', 'vim': '"' }
+let s:lanMaps = {'c': '//', 'cpp': '//', 'go': '//', 'lua': '--', 'php': '//', 'python': '#', 'vim': '"' }
 
 "comment for one line
 function SoulLineComment()

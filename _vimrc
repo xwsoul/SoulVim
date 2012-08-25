@@ -19,11 +19,11 @@ syntax on
 set ambiwidth=double
 " cold folding
 set foldmethod=syntax
-" tab转换为空格
+" tab to blank
 set expandtab
-" space width
+" shift width
 set sw=4
-" table length
+" tab stop
 set ts=4
 " smart tab
 set smarttab
@@ -32,14 +32,14 @@ set ai
 filetype on
 " autoload filetype plugin
 filetype plugin on
-" show blank at the end of a line
-au BufRead,BufNewFile *.* match Underlined /\s\+$/
 " wrapping
 set wrap
 " no cp
 set nocp
 " line is too long
 set colorcolumn=81
+" show blank at the end of a line
+au BufRead,BufNewFile *.* match Underlined /\s\+$/
 " for Windows
 if $OS == 'Windows_NT'
 	source $VIMRUNTIME/vimrc_example.vim
@@ -167,21 +167,10 @@ let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'", "`": "
 """"""""'""
 "let loaded_matchit = 1
 
-
-"""""""""""""""""
-" omni complete "
-"""""""""""""""""
-" omni for Python
-" autocmd FileType python set omnifunc=pythoncomplete#Complete
-" omni for PHP
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-"autocmd FileType python set omnifunc=pythoncomplete#Complete
-
-"""""""""""""""""
-" Other for PHP "
-"""""""""""""""""
-let php_sql_query=0
-let php_htmlInStrings=0
+""""""""
+" omni "
+""""""""
+set completeopt=longest,menu
 
 """"""""""""""""
 " auto command "

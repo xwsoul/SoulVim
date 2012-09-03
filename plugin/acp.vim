@@ -97,7 +97,7 @@ function s:makeDefaultBehavior()
   "---------------------------------------------------------------------------
   call add(behavs.go, {
         \   'command' : "\<C-x>\<C-o>",
-        \   'meets'   : 'acp#meetsForGomni',
+        \   'meets'   : 'acp#meetsForGoOmni',
         \   'repeat'  : 0,
         \ })
   "---------------------------------------------------------------------------
@@ -154,8 +154,8 @@ call s:defineOption('g:acp_behaviorFileLength', 0)
 call s:defineOption('g:acp_behaviorRubyOmniMethodLength', 0)
 call s:defineOption('g:acp_behaviorRubyOmniSymbolLength', 1)
 call s:defineOption('g:acp_behaviorPythonOmniLength', 0)
-call s:defineOption('g:acp_behaviorPHPOmniLength', 1)
-call s:defineOption('g:acp_behaviorGoOmniLength', 0)
+call s:defineOption('g:acp_behaviorPHPOmniLength', 2)
+call s:defineOption('g:acp_behaviorGoOmniLength', 1)
 call s:defineOption('g:acp_behaviorPerlOmniLength', -1)
 call s:defineOption('g:acp_behaviorXmlOmniLength', 0)
 call s:defineOption('g:acp_behaviorHtmlOmniLength', 0)

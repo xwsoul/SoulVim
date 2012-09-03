@@ -71,6 +71,8 @@ set noswapfile
 "set spell
 " show invisible chars
 "set list
+" auto focus finding string
+set incsearch
 
 """"""""""""""
 " leader key "

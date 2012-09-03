@@ -87,6 +87,18 @@ snippet main
 	func main() {
 		${1}
 	}
+snippet test
+	func Test${1}(t *testing.T) {
+		${2}
+	}
+snippet testfile
+	package ${1}
+
+	import "testing"
+
+	func Test${2}(t *testing.T) {
+		${3}
+	}
 # allcate
 snippet new
 	new(${1})

@@ -18,6 +18,11 @@ function SoulCompFunPHP(findstart, base)
 endfunction
 
 let s:phplists = [
+\ '__CLASS__',
+\ '__FILE__',
+\ '__FUNCTION__',
+\ '__LINE__',
+\ '__METHOD__',
 \ 'abs',
 \ 'acosh',
 \ 'acos',
@@ -101,6 +106,7 @@ let s:phplists = [
 \ 'closelog',
 \ 'compact',
 \ 'constant',
+\ 'continue',
 \ 'copy',
 \ 'cosh',
 \ 'cos',
@@ -178,6 +184,7 @@ let s:phplists = [
 \ 'exp',
 \ 'explode',
 \ 'expm1',
+\ 'extends',
 \ 'extension_loaded',
 \ 'extract',
 \ 'ezmlm_hash',

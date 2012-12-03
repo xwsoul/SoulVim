@@ -34,7 +34,17 @@ function SoulTagReload()
 endfunction
 
 function SoulTagMaker()
-	let l:mkResult = system("ctags --sort=yes -R -f " . SoulTagPath())
+    let l:cmd = g:tagloader_cmd . " -R"
+    if exists("g:tagloader_ignorefile")
+        let l:ignore = getcwd() . '/' . g:tagloader_ignorefile
+        if filereadable(g:tagloader_ignorefile)
+            let l:cmd = l:cmd . " --exclude=@" . l:ignore
+        else
+            exe system("echo > " . l:ignore)
+        endif
+    endif
+    let l:cmd = l:cmd . " -f " . SoulTagPath()
+	let l:mkResult = system(l:cmd)
 	if !empty(l:mkResult)
 		echoerr l:mkResult
 	endif

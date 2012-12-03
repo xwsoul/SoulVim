@@ -149,8 +149,8 @@ map <F7> <ESC>:TlistToggle<CR>
 let g:tagloader_cmd = 'ctags'
 "where to save the tags
 let g:tagloader_filename = '.soultags'
-" list all tags
-nmap <C-\> :call SoulTagList()<CR>
+"where to save the tags
+let g:tagloader_ignorefile = '.soulignore'
 " reload tag file
 map <F5> <ESC>:call SoulTagReload()<CR>
 " add present word directory into config file

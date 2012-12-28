@@ -6,7 +6,6 @@
 " Modified : 2011-07-25 19:45
 """"""""""""""""""""""""""""""""""""""
 
-
 """"""""""""""""""""
 " common configure "
 """"""""""""""""""""
@@ -74,52 +73,56 @@ set noswapfile
 " auto focus finding string
 set incsearch
 
-""""""""""""""
-" leader key "
-""""""""""""""
-let mapleader = "9"
-" save file
-imap <leader>w <ESC>:w<CR>a
-nmap <leader>w :w<CR>
-" quit
-imap <leader>q <ESC>:q<CR>
-nmap <leader>q :q<CR>
-" save and exit
-imap <leader>x <ESC>:wq<CR>
-nmap <leader>x :wq<CR>
-" // style comment
-imap <leader>/ <ESC>:call SoulLineComment()<CR>
-nmap <leader>/ :call SoulLineComment()<CR>
-" append ; to the end of line
-imap <leader>; <ESC>A;
-nmap <leader>; A;
-" append ; to the end of line
-imap <leader>, <ESC>A,
-nmap <leader>, A,
-" append at end of line
-imap <leader>a <ESC>A
-" full time
-imap <leader>t <C-R>=strftime("%Y-%m-%d %H:%M")<CR>
-" date
-imap <leader>d <C-R>=strftime("%Y-%m-%d")<CR>
+"""""""""""""""""
+" some key maps "
+"""""""""""""""""
+imap jk <ESC>
+
+" leader key
+let mapleader = "jj"
 " @ just email
 imap <leader>@ xwsoul@gmail.com
+" append ; to the end of line
+map <leader>, <ESC>A,
 " . means current
 imap <leader>. <C-R>=expand('%')<CR>
+" append ; to the end of line
+map <leader>; <ESC>A;
+" // style comment
+map <leader>/ <ESC>:call SoulLineComment()<CR>
+" append at end of line
+imap <leader>a <ESC>A
+" add present word directory into config file
+map <leader>b <ESC>:Bookmark 
 " close tab
-imap <leader>c <ESC>:tabclose<CR>
-nmap <leader>c :tabclose<CR>
+map <leader>c <ESC>:tabclose<CR>
+" date
+imap <leader>d <C-R>=strftime("%Y-%m-%d")<CR>
 " move to tab
-nmap <A-RIGHT> :tabnext<CR>
-nmap <A-LEFT> :tabprevious<CR>
+nmap <leader>h :tabnext<CR>
+nmap <leader>l :tabprevious<CR>
+" load project
+map <leader>p <ESC>:SoulProject 
+" quit
+map <leader>q <ESC>:q<CR>
+" full time
+imap <leader>t <C-R>=strftime("%Y-%m-%d %H:%M")<CR>
+" save file
+map <leader>w <ESC>:w<CR>a
+" save and exit
+map <leader>x <ESC>:wq<CR>
+" reload tag file
+map <leader>5 <ESC>:call SoulTagReload()<CR>
+" set hot key for Taglist's open and close
+map <leader>7 <ESC>:TlistToggle<CR>
+" map for NERDTree
+map <leader>8 <ESC>:NERDTreeToggle<CR>
 
 """"""""""""""""""""""
 " NERDTree configure "
 """"""""""""""""""""""
 " NERDTree width
 let NERDTreeWinSize = 22
-" map for NERDTree
-map <F8> <ESC>:NERDTreeToggle<CR>
 
 """"""""""""""""""""""
 " SnipMate configure "
@@ -138,8 +141,6 @@ let Tlist_Ctags_Cmd = 'ctags'
 let Tlist_Exit_OnlyWindow = 1
 " taglist on the right
 let Tlist_Use_Right_Window = 1
-" set hot key for Taglist's open and close
-map <F7> <ESC>:TlistToggle<CR>
 
 
 """""""""""""""""""""""
@@ -151,11 +152,6 @@ let g:tagloader_cmd = 'ctags'
 let g:tagloader_filename = '.soultags'
 "where to save the tags
 let g:tagloader_ignorefile = '.soulignore'
-" reload tag file
-map <F5> <ESC>:call SoulTagReload()<CR>
-" add present word directory into config file
-map <S-F5> <ESC>:Bookmark 
-map <C-l>p <ESC>:SoulProject 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " auto close                                           "

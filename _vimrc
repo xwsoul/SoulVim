@@ -76,10 +76,10 @@ set incsearch
 """""""""""""""""
 " some key maps "
 """""""""""""""""
-imap jk <ESC>
+imap fd <ESC>
 
 " leader key
-let mapleader = "jj"
+let mapleader = "ff"
 " @ just email
 imap <leader>@ xwsoul@gmail.com
 " append ; to the end of line

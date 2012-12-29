@@ -99,8 +99,8 @@ map <leader>c <ESC>:tabclose<CR>
 " date
 imap <leader>d <C-R>=strftime("%Y-%m-%d")<CR>
 " move to tab
-nmap <leader>h :tabnext<CR>
-nmap <leader>l :tabprevious<CR>
+nmap <leader>h :tabprevious<CR>
+nmap <leader>l :tabnext<CR>
 " load project
 map <leader>p <ESC>:SoulProject 
 " quit

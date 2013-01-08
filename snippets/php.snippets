@@ -204,6 +204,10 @@ snippet fun
 	function ${1:name}(${2:$}) {
 		${3}
 	}
+snippet funa
+	function action${1:name}() {
+		${3}
+	}
 snippet arr
 	array(${1})
 snippet =>
@@ -214,13 +218,20 @@ snippet vare
 	var_dump(${1:var});exit;
 snippet re
 	return ${1};
+snippet rc
+	return compact('${1}'${2});
 # public element
 snippet pub
 	/**
 	 * ${1:describe here}
 	 * @return @${2}
 	 */
-	public fun
+	public fun${3}
+snippet puba
+	/**
+	 * ${1}
+	 */
+	public funa${2}
 snippet pubs
 	/**
 	 * ${1:describe here}
@@ -342,3 +353,5 @@ snippet _io
 	is_object(${1:var})${2}
 snippet _is
 	is_string(${1:var})${2}
+snippet x:a
+	Xmas::app()->${1}

@@ -47,7 +47,7 @@ if $OS == 'Windows_NT'
 	" behave mswin
 else
 	if has('gui_running')
-		set guifont=文泉驿等宽微米黑
+		set guifont=Monaco
 	endif
 endif
 " 
@@ -191,3 +191,8 @@ endif
 au filetype php set omnifunc=SoulCompFunPHP
 au filetype php let php_sql_query=0
 au filetype php let php_htmlInStrings=0
+
+""""""""""""""""
+" Set for Ruby "
+""""""""""""""""
+au filetype ruby set omnifunc=SoulCompFunRuby

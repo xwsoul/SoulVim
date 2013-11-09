@@ -32,6 +32,7 @@ function s:makeDefaultBehavior()
         \   'python' : [],
         \   'php'    : [],
         \   'go'     : [],
+        \   'scala'  : [],
         \   'perl'   : [],
         \   'xml'    : [],
         \   'html'   : [],
@@ -101,6 +102,12 @@ function s:makeDefaultBehavior()
         \   'repeat'  : 0,
         \ })
   "---------------------------------------------------------------------------
+  call add(behavs.scala, {
+        \   'command' : "\<C-x>\<C-o>",
+        \   'meets'   : 'acp#meetsForScalaOmni',
+        \   'repeat'  : 0,
+        \ })
+  "---------------------------------------------------------------------------
   call add(behavs.perl, {
         \   'command' : "\<C-x>\<C-o>",
         \   'meets'   : 'acp#meetsForPerlOmni',
@@ -156,6 +163,7 @@ call s:defineOption('g:acp_behaviorRubyOmniSymbolLength', 1)
 call s:defineOption('g:acp_behaviorPythonOmniLength', 0)
 call s:defineOption('g:acp_behaviorPHPOmniLength', 3)
 call s:defineOption('g:acp_behaviorGoOmniLength', 1)
+call s:defineOption('g:acp_behaviorScalaOmniLength', 1)
 call s:defineOption('g:acp_behaviorPerlOmniLength', -1)
 call s:defineOption('g:acp_behaviorXmlOmniLength', 0)
 call s:defineOption('g:acp_behaviorHtmlOmniLength', 0)

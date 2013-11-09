@@ -90,33 +90,27 @@ imap <leader>. <C-R>=expand('%')<CR>
 map <leader>; <ESC>A;
 " // style comment
 map <leader>/ <ESC>:call SoulLineComment()<CR>
-" append at end of line
-imap <leader>a <ESC>A
 " add present word directory into config file
 map <leader>b <ESC>:Bookmark 
 " close tab
 map <leader>c <ESC>:tabclose<CR>
 " date
 imap <leader>d <C-R>=strftime("%Y-%m-%d")<CR>
-" move to tab
+" full time
+imap <leader>t <C-R>=strftime("%Y-%m-%d %H:%M")<CR>
+" tab move to
 nmap <leader>h :tabprevious<CR>
 nmap <leader>l :tabnext<CR>
 " load project
 map <leader>p <ESC>:SoulProject 
-" quit
-map <leader>q <ESC>:q<CR>
-" full time
-imap <leader>t <C-R>=strftime("%Y-%m-%d %H:%M")<CR>
-" save file
-map <leader>w <ESC>:w<CR>a
-" save and exit
-map <leader>x <ESC>:wq<CR>
 " reload tag file
 map <leader>5 <ESC>:call SoulTagReload()<CR>
 " set hot key for Taglist's open and close
 map <leader>7 <ESC>:TlistToggle<CR>
 " map for NERDTree
 map <leader>8 <ESC>:NERDTreeToggle<CR>
+" quick buffer
+let g:qb_hotkey = "<leader>q"
 
 """"""""""""""""""""""
 " NERDTree configure "
@@ -184,15 +178,3 @@ if has("gui_running")
 	set guioptions-=T
 	winpos 100 50
 endif
-
-"""""""""""""""
-" Set for PHP "
-"""""""""""""""
-au filetype php set omnifunc=SoulCompFunPHP
-au filetype php let php_sql_query=0
-au filetype php let php_htmlInStrings=0
-
-""""""""""""""""
-" Set for Ruby "
-""""""""""""""""
-au filetype ruby set omnifunc=SoulCompFunRuby

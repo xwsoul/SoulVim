@@ -1,55 +1,54 @@
-snippet val
-	val $1 = $2
-snippet var
-	var $1 = $2
+snippet ()
+	($1) => $2
 snippet def
 	def $1($2) = $3
 snippet def:
 	def $1($2):$3 = $4
-snippet if:
+snippet if
 	if($1) $2
-snippet ifel:
+snippet ifel
 	if($1)
 		$2
 	else
 		$3
-snippet ifelse:
+snippet ifelse
 	if($1) {
 		$2
 	} else {
 		$3
 	}
-snippet el:
+snippet el
 	else {
 		$1
 	}
-snippet wh:
+snippet wh
 	while($1) {
 		$2
 	}
-snippet while:
+snippet while
 	while($1) {
 		$2
 	}
-snippet for:
-	for($1 <- $2) {$3}
-snippet p:
+snippet for
+	for($1 <- $2)
+		$3
+snippet p
 	print($1)
-snippet pl:
+snippet pl
 	println($1)
-snippet .f:
-	.foreach($1 => $2)
-snippet imp:
+snippet imp
 	import $1
-snippet cl:
+snippet cl
 	class $1 ${2:extends }$3 {
 		$4
 	}
-snippet obj:
+snippet obj
 	object $1 ${2:extends }$3 {
 		$4
 	}
-snippet prir:
-	private var $1 = $2
-snippet pril:
-	private val $1 = $2
+snippet main
+	def main(args: Array[String]) {
+		$1
+	}
+snippet .
+	this.

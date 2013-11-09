@@ -141,6 +141,12 @@ function acp#meetsForGoOmni(context)
 endfunction
 
 "
+function acp#meetsForScalaOmni(context)
+  return g:acp_behaviorScalaOmniLength >= 0 &&
+        \ a:context =~ '\w\.\k\{' . g:acp_behaviorGoOmniLength . ',}$'
+endfunction
+
+"
 function acp#meetsForPerlOmni(context)
   return g:acp_behaviorPerlOmniLength >= 0 &&
         \ a:context =~ '\w->\k\{' . g:acp_behaviorPerlOmniLength . ',}$'

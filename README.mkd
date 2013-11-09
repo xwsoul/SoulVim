@@ -15,7 +15,7 @@ SoulVim
 * [SnipMate](http://www.vim.org/scripts/script.php?script_id=2540)
 * [Match It](http://www.vim.org/scripts/script.php?script_id=39)
 * [Quick Buffer](http://vim.sourceforge.net/scripts/script.php?script_id=1910)
-* [pep8checker](https://github.com/xwsoul/SoulVim/blob/master/plugin/pep8checker.vim) (Sorry , I Can find this plug's origin url.)
+* [pep8checker](https://github.com/xwsoul/SoulVim/blob/master/plugin/pep8checker.vim) (Sorry , I Can find this plugin's origin url.)
 * [phplint](https://github.com/xwsoul/SoulVim/blob/master/plugin/phplint.vim) (php syntax check, Most code copied from pep8checker.)
 * [SoulProject](https://github.com/xwsoul/SoulVim/blob/master/plugin/SoulProject.vim)
 * [SoulComment](https://github.com/xwsoul/SoulVim/blob/master/plugin/SoulComment.vim) (Smart comment tool for many languages.)
@@ -34,8 +34,9 @@ SoulVim
 
 #### Omni Complete:
 
-* Python
 * PHP
+* Python
+* Scala
 * Go
 
 ####Something special in SoulVim:
@@ -49,37 +50,36 @@ SoulVim
 	![Snapshot for end line space check][blankcheck]
 
 * SoulProject
+
+    `simple project manager for vim based on NerdTree`
+
+* [ctags rules for scala](https://github.com/xwsoul/SoulVim/blob/master/_ctags)
+
 * vim rc file link shell
 * Third part tools install list
-* AutoComplPop for PHP and Go
+* AutoComplPop for PHP / Python / Scala / Go
 
 
 ####hotkeys:
 
-* leader--------,
+* leader--------
 
-	1. leader+w  => :w (write to file)
-	2. leader+q  => :q (quit)
-	2. leader+x  => :wq (save and exit)
-	3. leader+/  => smarty line comment
-	8. leader+;  => append *;* to end of line
-	8. leader+,  => append *,* to end of line
-	8. leader+a  => append at end of line
-	4. leader+t  => long formated time (Y-m-d H:M)
-	5. leader+d  => date(Y-m-d)
-	6. leader+@  => My Email address
-	7. leader+.  => current filename
-	7. leader+c  => close tab
-
-* Alt+Right		move to next tab
-* Alt+Left		move previous tab
-* F4			open quick buffer
-* F5			reload tag for current directory
-* Shift+F5		Add current path as bookmark
-* F7			Toggle a taglist window
-* F8			Toggle a NerdTree window
-* Ctrl+l,p	:SoulProject
-
+	1. leader+/  => smarty line comment
+	2. leader+;  => append *;* to end of line
+	2. leader+,  => append *,* to end of line
+	2. leader+t  => long formated time (Y-m-d H:M)
+	2. leader+d  => date(Y-m-d)
+	2. leader+@  => My Email address
+	2. leader+.  => current filename
+	2. leader+c  => close tab
+    2. leader+l  => move to next tab
+    2. leader+h  => move to previous tab
+    2. leader+p  => load project
+    2. leader+b  => bookmarked current path as project
+    2. leader+5  => reload project tag file
+    2. leader+7  => toggle a taglist window
+    2. leader+8  => toggle a NerdTree window
+    2. leader+q  => quick buffer
 
 ###colorscheme:
 
@@ -100,4 +100,3 @@ SoulVim
 
 [phplint]: http://farm7.static.flickr.com/6008/5979704329_a1899d79e1.jpg "PHPLint Snapshot"
 [blankcheck]: http://farm7.static.flickr.com/6169/6197718003_73fb0b93fa_b.jpg "End line blank check."
-

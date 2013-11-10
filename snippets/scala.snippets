@@ -38,6 +38,8 @@ snippet pl
 	println($1)
 snippet imp
 	import $1
+snippet pkg
+	package ${1:com.}$2
 snippet cl
 	class $1 ${2:extends }$3 {
 		$4
@@ -45,6 +47,10 @@ snippet cl
 snippet obj
 	object $1 ${2:extends }$3 {
 		$4
+	}
+snippet tr
+	trait $1 {
+		$2
 	}
 snippet main
 	def main(args: Array[String]) {

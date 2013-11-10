@@ -1,6 +1,7 @@
+" Order: frequency > character
 function SoulCompFunScala(findstart, base)
+    let line = getline('.')
     if a:findstart
-        let line = getline('.')
         let start = col('.') - 1
         while start >= 0 && line[start - 1] =~ '[a-zA-Z_0-9]'
             let start -= 1
@@ -8,41 +9,170 @@ function SoulCompFunScala(findstart, base)
         return start
     else
         let res = []
-        for k in s:scalalists
-            if k =~ '^' . a:base
-                call add(res, k)
-            endif
-        endfor
+        if line =~ '^import '
+            for k in s:scalaimports
+                let pkgn = substitute(line, '^import ', '', '')
+                if k =~ '^' . pkgn . a:base
+                    call add(res, substitute(k, pkgn, '', ''))
+                endif
+            endfor
+        else
+            for k in s:scalalists
+                if k =~ '^' . a:base
+                    call add(res, k)
+                endif
+            endfor
+        endif
         return res
     endif
 endfunction
 
+let s:scalaimports = [
+\ 'com',
+\ 'com.github',
+\ 'net',
+\ 'org',
+\ 'org.apache',
+\ 'scala',
+\ 'scala.actors',
+\ 'scala.annotation',
+\ 'scala.actors._',
+\ 'scala.actors.{',
+\ 'scala.actors.Actor._',
+\ 'scala.actors.Actor.{',
+\ 'scala.actors.remote',
+\ 'scala.actors.scheduler',
+\ 'scala.actors.remote._',
+\ 'scala.actors.remote.{',
+\ 'scala.actors.scheduler._',
+\ 'scala.actors.scheduler.{',
+\ 'scala.annotation._',
+\ 'scala.annotation.meta',
+\ 'scala.annotation.unchecked',
+\ 'scala.annotation.{',
+\ 'scala.annotation.meta._',
+\ 'scala.annotation.meta.{',
+\ 'scala.annotation.unchecked._',
+\ 'scala.annotation.unchecked.{',
+\ 'scala.beans',
+\ 'scala.beans._',
+\ 'scala.beans.{',
+\ 'scala.collection',
+\ 'scala.compat',
+\ 'scala.concurrent',
+\ 'scala.collection._',
+\ 'scala.collection.{',
+\ 'scala.collection',
+\ 'scala.collection.mutable',
+\ 'scala.collection.mutable._',
+\ 'scala.collection.mutable.{',
+\ 'scala.collection.mutable.HashMap',
+\ 'scala.compat._',
+\ 'scala.compat.{',
+\ 'scala.concurrent._',
+\ 'scala.concurrent.{',
+\ 'scala.io',
+\ 'scala.io._',
+\ 'scala.io.{',
+\ 'scala.math._',
+\ 'scala.math',
+\ 'scala.math.{',
+\ 'scala.parallel._',
+\ 'scala.parallel',
+\ 'scala.parallel.{',
+\ 'scala.ref',
+\ 'scala.reflect',
+\ 'scala.ref._',
+\ 'scala.ref.{',
+\ 'scala.reflect._',
+\ 'scala.reflect.api',
+\ 'scala.reflect.macros',
+\ 'scala.reflect.runtime',
+\ 'scala.reflect.{',
+\ 'scala.reflect.api._',
+\ 'scala.reflect.api.{',
+\ 'scala.reflect.macros._',
+\ 'scala.reflect.macros.{',
+\ 'scala.reflect.runtime._',
+\ 'scala.reflect.runtime.{',
+\ 'scala.sys',
+\ 'scala.swing',
+\ 'scala.sys._',
+\ 'scala.sys.{',
+\ 'scala.swing._',
+\ 'scala.swing.{',
+\ 'scala.testing',
+\ 'scala.text',
+\ 'scala.testing._',
+\ 'scala.testing.{',
+\ 'scala.text._',
+\ 'scala.text.{',
+\ 'scala.util',
+\ 'scala.util._',
+\ 'scala.util.{',
+\ 'scala.util.logging',
+\ 'scala.util.parsing',
+\ 'scala.util.regexp',
+\ 'scala.util.logging._',
+\ 'scala.util.logging.{',
+\ 'scala.util.parsing.combinator',
+\ 'scala.util.parsing.input',
+\ 'scala.util.parsing.json',
+\ 'scala.util.parsing.combinator.testing',
+\ 'scala.util.parsing.combinator.testing._',
+\ 'scala.util.parsing.combinator.testing.{',
+\ 'scala.util.parsing.combinator.token',
+\ 'scala.util.parsing.combinator.token._',
+\ 'scala.util.parsing.combinator.token.{',
+\ 'scala.util.parsing.input._',
+\ 'scala.util.parsing.input.{',
+\ 'scala.util.parsing.json._',
+\ 'scala.util.parsing.json.{',
+\ 'scala.util.regexp._',
+\ 'scala.util.regexp.{',
+\ 'scala.xml',
+\ 'scala.xml.parsing',
+\ 'scala.xml._',
+\ 'scala.xml.{',
+\ 'scala.xml.parsing._',
+\ 'scala.xml.parsing.{',
+\ 'java',
+\ 'java.net',
+\ 'java.net._',
+\ 'java.net.{',
+\ 'java.util',
+\ 'java.util._',
+\ 'java.util.{'
+\ ]
 let s:scalalists = [
 \ 'apply(',
 \ 'Array',
+\ 'Application',
 \ 'Boolean',
 \ 'Byte',
+\ 'count(',
 \ 'capitalize',
 \ 'Char',
-\ 'count(',
 \ 'contains(',
-\ 'Double',
 \ 'drop(',
+\ 'Double',
 \ 'dropRight(',
 \ 'exists(',
 \ 'extends',
+\ 'foreach(',
 \ 'filter(',
 \ 'Float',
 \ 'forall(',
-\ 'foreach(',
 \ 'head',
 \ 'init',
+\ 'import',
 \ 'Int',
 \ 'isEmpty',
 \ 'isInfinity',
+\ 'implicit',
+\ 'List',
 \ 'last',
 \ 'length',
-\ 'List',
 \ 'Long',
 \ 'Map',
 \ 'map(',
@@ -51,8 +181,8 @@ let s:scalalists = [
 \ 'object',
 \ 'override',
 \ 'package',
-\ 'print(',
 \ 'println(',
+\ 'print(',
 \ 'private',
 \ 'range(',
 \ 'readLine()',

@@ -1,60 +1,60 @@
 snippet ()
-	($1) => $2
+	(${1}) => ${2}
 snippet def
-	def $1($2) = $3
+	def ${1}(${2}) = ${3}
 snippet def:
-	def $1($2):$3 = $4
+	def ${1}(${2}):${3} = ${4}
 snippet if
-	if($1) $2
+	if(${1}) ${2}
 snippet ifel
-	if($1)
-		$2
+	if(${1})
+		${2}
 	else
-		$3
+		${3}
 snippet ifelse
-	if($1) {
-		$2
+	if(${1}) {
+		${2}
 	} else {
-		$3
+		${3}
 	}
 snippet el
 	else {
-		$1
+		${1}
 	}
 snippet wh
-	while($1) {
-		$2
+	while(${1}) {
+		${2}
 	}
 snippet while
-	while($1) {
-		$2
+	while(${1}) {
+		${2}
 	}
 snippet for
-	for($1 <- $2)
-		$3
+	for(${1} <- ${2})
+		${3}
 snippet p
-	print($1)
+	print(${1})
 snippet pl
-	println($1)
+	println(${1})
 snippet imp
-	import $1
+	import ${1}
 snippet pkg
-	package ${1:com.}$2
+	package ${1:com.}${2}
 snippet cl
-	class $1 ${2:extends }$3 {
-		$4
+	class ${1} ${2:extends }${3} {
+		${4}
 	}
 snippet obj
-	object $1 ${2:extends }$3 {
-		$4
+	object ${1} ${2:extends }${3} {
+		${4}
 	}
 snippet tr
-	trait $1 {
-		$2
+	trait ${1} {
+		${2}
 	}
 snippet main
 	def main(args: Array[String]) {
-		$1
+		${1}
 	}
 snippet .
 	this.

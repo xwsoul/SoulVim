@@ -143,7 +143,8 @@ endfunction
 "
 function acp#meetsForScalaOmni(context)
   return g:acp_behaviorScalaOmniLength >= 0 &&
-        \ a:context =~ '\w\.\k\{' . g:acp_behaviorGoOmniLength . ',}$'
+        \ (a:context =~ '\w\{' . g:acp_behaviorScalaOmniLength . ',}$' ||
+        \  a:context =~ '\w\.\{' . g:acp_behaviorScalaOmniLength . ',}$')
 endfunction
 
 "

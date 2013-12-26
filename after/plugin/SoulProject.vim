@@ -25,7 +25,7 @@ endfunction
 
 function SoulTagLoad()
 	call SoulTagMaker()
-	exe "set tags=" . SoulTagPath()
+	exe "set tags=" . shellescape(SoulTagPath())
 endfunction
 
 function SoulTagReload()
@@ -38,12 +38,12 @@ function SoulTagMaker()
     if exists("g:tagloader_ignorefile")
         let l:ignore = getcwd() . '/' . g:tagloader_ignorefile
         if filereadable(g:tagloader_ignorefile)
-            let l:cmd = l:cmd . " --exclude=@" . l:ignore
+            let l:cmd = l:cmd . " --exclude=@" . shellescape(l:ignore)
         else
-            exe system("echo > " . l:ignore)
+            call writefile([''], l:ignore)
         endif
     endif
-    let l:cmd = l:cmd . " -f " . SoulTagPath()
+    let l:cmd = l:cmd . " -f " . shellescape(SoulTagPath())
 	let l:mkResult = system(l:cmd)
 	if !empty(l:mkResult)
 		echoerr l:mkResult

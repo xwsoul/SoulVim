@@ -19,13 +19,9 @@ au VimEnter * call SoulTagAutoload()
 " open Project
 command! -n=1 -complete=customlist,SoulCompleteBookmarks -bar SoulProject call SoulOpenProject('<args>')
 
-function SoulTagPath()
-	return getcwd() . '/' . g:tagloader_filename
-endfunction
-
 function SoulTagLoad()
 	call SoulTagMaker()
-	exe "set tags=" . shellescape(SoulTagPath())
+	exe "set tags=" . g:tagloader_filename
 endfunction
 
 function SoulTagReload()
@@ -36,14 +32,13 @@ endfunction
 function SoulTagMaker()
     let l:cmd = g:tagloader_cmd . " -R"
     if exists("g:tagloader_ignorefile")
-        let l:ignore = getcwd() . '/' . g:tagloader_ignorefile
         if filereadable(g:tagloader_ignorefile)
-            let l:cmd = l:cmd . " --exclude=@" . shellescape(l:ignore)
+            let l:cmd = l:cmd . " --exclude=@" . g:tagloader_ignorefile
         else
-            call writefile([''], l:ignore)
+            call writefile([], g:tagloader_ignorefile)
         endif
     endif
-    let l:cmd = l:cmd . " -f " . shellescape(SoulTagPath())
+    let l:cmd = l:cmd . " -f " . g:tagloader_filename
 	let l:mkResult = system(l:cmd)
 	if !empty(l:mkResult)
 		echoerr l:mkResult

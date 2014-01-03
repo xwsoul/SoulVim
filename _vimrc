@@ -48,12 +48,12 @@ if $OS == 'Windows_NT'
 	" behave mswin
 else
 	if has('gui_running')
-		set guifont=Monaco
+		set guifont=Monaco:h12
 	endif
 endif
 " 
 " set autoread
-color molokai
+color jellybeans
 " file coding
 set encoding=utf-8
 set fileencodings=utf-8,chinese

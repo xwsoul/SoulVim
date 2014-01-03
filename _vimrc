@@ -6,6 +6,7 @@
 " Modified : 2011-07-25 19:45
 """"""""""""""""""""""""""""""""""""""
 
+
 """"""""""""""""""""
 " common configure "
 """"""""""""""""""""
@@ -76,10 +77,8 @@ set incsearch
 """""""""""""""""
 " some key maps "
 """""""""""""""""
-imap fd <ESC>
-
 " leader key
-let mapleader = "ff"
+let mapleader = ';'
 " @ just email
 imap <leader>@ xwsoul@gmail.com
 " append ; to the end of line
@@ -121,7 +120,7 @@ let NERDTreeWinSize = 22
 """"""""""""""""""""""
 " SnipMate configure "
 """"""""""""""""""""""
-let g:snips_author ="xwsoul"
+let g:snips_author ="Wayne Xue <xwsou@gmail.com>"
 
 
 """""""""""""""""""""
@@ -151,7 +150,7 @@ let g:tagloader_ignorefile = '.soulignore'
 " auto close                                           "
 " http://www.vim.org/scripts/script.php?script_id=2009 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'", "`": "`"}
+let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'"}
 
 
 """""""""""
@@ -178,3 +177,6 @@ if has("gui_running")
 	set guioptions-=T
 	winpos 100 50
 endif
+
+
+let g:phpbin = '/usr/local/bin/php'

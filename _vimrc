@@ -37,7 +37,7 @@ set wrap
 " no cp
 set nocp
 " line is too long
-set colorcolumn=81
+set colorcolumn=80
 " show blank at the end of a line
 au BufRead,BufNewFile *.* match Underlined /\s\+$/
 " for Windows

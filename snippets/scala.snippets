@@ -30,8 +30,9 @@ snippet while
 		${2}
 	}
 snippet for
-	for(${1} <- ${2})
+	for(${1} <- ${2}) {
 		${3}
+	}
 snippet p
 	print(${1})
 snippet pl
@@ -41,12 +42,24 @@ snippet imp
 snippet pkg
 	package ${1:com.}${2}
 snippet cl
-	class ${1} ${2:extends }${3} {
-		${4}
+	class ${1} {
+		${2}
+	}
+snippet cle
+	class ${1:ClassName} extends ${3} {
+		${3}
 	}
 snippet obj
-	object ${1} ${2:extends }${3} {
+	object ${1} {
+		${2}
+	}
+snippet obje
+	object ${1:ObjectName} extends ${3} {
 		${4}
+	}
+snippet app
+	object ${1} extends Application {
+		${2}
 	}
 snippet tr
 	trait ${1} {
@@ -57,4 +70,4 @@ snippet main
 		${1}
 	}
 snippet .
-	this.
+	this.${1}

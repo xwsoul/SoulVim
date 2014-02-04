@@ -1,9 +1,23 @@
 snippet ()
 	(${1}) => ${2}
+snippet :=>
+	${1}: ${2} => ${3}
 snippet def
 	def ${1}(${2}) = ${3}
 snippet def:
-	def ${1}(${2}):${3} = ${4}
+	def ${1}(${2}): ${3} = ${4}
+snippet od
+	override def ${1}(${2}) = ${3}
+snippet od:
+	override def ${1}(${2}): ${3} = ${4}
+snippet ov:
+	override val ${1}: ${2}
+snippet wi
+	with ${1}
+snippet wi2
+	with ${1} with ${2}
+snippet wi3
+	with ${1} with ${2} with ${3}
 snippet if
 	if(${1}) ${2}
 snippet ifel
@@ -46,15 +60,21 @@ snippet cl
 		${2}
 	}
 snippet cle
-	class ${1:ClassName} extends ${3} {
+	class ${1:ClassName} extends ${2} {
 		${3}
 	}
+snippet clew
+	class ${1:ClassName} extends ${2} with ${3} {
+		${4}
+	}
+snippet neww
+	new ${1:ClassName} with ${2}
 snippet obj
 	object ${1} {
 		${2}
 	}
 snippet obje
-	object ${1:ObjectName} extends ${3} {
+	object ${1:ObjectName} extends ${2} {
 		${4}
 	}
 snippet app
@@ -65,9 +85,37 @@ snippet tr
 	trait ${1} {
 		${2}
 	}
+snippet tre
+	trait ${1:TraitName} extends ${2} {
+		${3}
+	}
+snippet ab
+	abstract class ${1} {
+		${2}
+	}
 snippet main
 	def main(args: Array[String]) {
 		${1}
 	}
 snippet .
 	this.${1}
+snippet try
+	try {
+		${1}
+	} catch {
+		${2}
+	}
+snippet tryf
+	try {
+		${1}
+	} finally {
+		${2}
+	}
+snippet trycf
+	try {
+		${1}
+	} catch {
+		${2}
+	} finally {
+		${3}
+	}

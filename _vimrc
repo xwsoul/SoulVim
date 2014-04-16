@@ -108,6 +108,9 @@ map <leader>5 <ESC>:call SoulTagReload()<CR>
 map <leader>7 <ESC>:TlistToggle<CR>
 " map for NERDTree
 map <leader>8 <ESC>:NERDTreeToggle<CR>
+" open tag in new tab
+nnoremap <C-]> :tabnew %<CR>g<C-]>
+vnoremap <C-]> <Esc>:tabnew %<CR>gvg<C-]>
 " quick buffer
 let g:qb_hotkey = "<leader>q"
 

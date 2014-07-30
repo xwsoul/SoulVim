@@ -2,6 +2,13 @@
 " Author:       xwsoul (xwsoul@gmail.com)
 " Modified:     2011-07-26 14:54
 
+
+if exists("rubylint_disable")
+    if g:rubylint_disable
+        finish
+    endif
+endif
+
 if !exists("rubylint_command")
   let rubylint_command = 'ruby -c'
 endif

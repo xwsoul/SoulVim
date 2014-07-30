@@ -44,16 +44,16 @@ au BufRead,BufNewFile *.* match Underlined /\s\+$/
 if $OS == 'Windows_NT'
 	source $VIMRUNTIME/vimrc_example.vim
 	source $VIMRUNTIME/mswin.vim
-	set guifont=Consolas:h11:i
+	set guifont=M+\ 1mn\ regular:h12
 	" behave mswin
 else
 	if has('gui_running')
-		set guifont=Monaco:h12
+        set guifont=M+\ 1mn\ regular:h12
 	endif
 endif
 " 
 " set autoread
-color jellybeans
+color molokai
 " file coding
 set encoding=utf-8
 set fileencodings=utf-8,chinese
@@ -181,5 +181,5 @@ if has("gui_running")
 	winpos 100 50
 endif
 
-
 let g:phpbin = '/usr/local/bin/php'
+let g:rubylint_disable = 1

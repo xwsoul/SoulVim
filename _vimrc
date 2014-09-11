@@ -48,7 +48,7 @@ if $OS == 'Windows_NT'
 	" behave mswin
 else
 	if has('gui_running')
-        set guifont=M+\ 1mn\ regular:h12
+        set guifont=M+\ 1mn\ regular\ 11
 	endif
 endif
 " 

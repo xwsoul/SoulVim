@@ -28,6 +28,7 @@ endfunction
 function s:makeDefaultBehavior()
   let behavs = {
         \   '*'      : [],
+        \   'clojure': [],
         \   'ruby'   : [],
         \   'python' : [],
         \   'php'    : [],
@@ -81,6 +82,12 @@ function s:makeDefaultBehavior()
   call add(behavs.ruby, {
         \   'command' : "\<C-x>\<C-o>",
         \   'meets'   : 'acp#meetsForRubyOmni',
+        \   'repeat'  : 0,
+        \ })
+  "---------------------------------------------------------------------------
+  call add(behavs.clojure, {
+        \   'command' : "\<C-x>\<C-o>",
+        \   'meets'   : 'acp#meetsForClojureOmni',
         \   'repeat'  : 0,
         \ })
   "---------------------------------------------------------------------------
@@ -163,6 +170,7 @@ call s:defineOption('g:acp_behaviorRubyOmniSymbolLength', 1)
 call s:defineOption('g:acp_behaviorPythonOmniLength', 0)
 call s:defineOption('g:acp_behaviorPHPOmniLength', 3)
 call s:defineOption('g:acp_behaviorGoOmniLength', 1)
+call s:defineOption('g:acp_behaviorClojureOmniLength', 1)
 call s:defineOption('g:acp_behaviorScalaOmniLength', 1)
 call s:defineOption('g:acp_behaviorPerlOmniLength', -1)
 call s:defineOption('g:acp_behaviorXmlOmniLength', 0)

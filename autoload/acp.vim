@@ -127,11 +127,15 @@ function acp#meetsForPythonOmni(context)
 endfunction
 
 "
+function acp#meetsForClojureOmni(context)
+  return g:acp_behaviorClojureOmniLength >= 0 &&
+        \ a:context =~ '\k\{' . g:acp_behaviorClojureOmniLength . ',}$'
+endfunction
+
+"
 function acp#meetsForPHPOmni(context)
-  if g:acp_behaviorPHPOmniLength >= 0 &&
+  return g:acp_behaviorPHPOmniLength >= 0 &&
         \ a:context =~ '\w\{' . g:acp_behaviorPHPOmniLength . ',}$'
-    return 1
-  endif
 endfunction
 
 "
